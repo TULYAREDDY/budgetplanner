@@ -1,0 +1,23 @@
+<<<<<<<
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+=======
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+>>>>>>> 
