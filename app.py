@@ -201,14 +201,22 @@ def analyze():
         emi_plans = data.get('emi_plans', [])
         bank_statement = data.get('bank_statement')
         
-        # Run optimizations
-        optimized_expenses, status = greedy_optimizer(expenses, salary)  # Unpack the tuple returned by greedy_optimizer
+        # Separate fixed and reducible expenses
+        fixed_expenses = [exp for exp in expenses if exp.get('expense_type') == 'Fixed']
+        reducible_expenses = [exp for exp in expenses if exp.get('expense_type') == 'Reducible']
+
+        # Run optimization only on reducible expenses
+        optimized_reducible_expenses, status = greedy_optimizer(reducible_expenses, salary)
+
+        # Merge fixed expenses back with optimized reducible expenses
+        optimized_expenses = fixed_expenses + optimized_reducible_expenses
+
         emi_recommendation = dp_emi_selector(emi_plans, salary)
         advice = decision_tree_advice(optimized_expenses, emi_recommendation, salary)
-        
+
         # Get AI advice
         ai_advice = get_ai_advice(optimized_expenses, salary, emi_plans, bank_statement)
-        
+
         # Prepare results
         results = {
             'user_name': user_name,
@@ -219,16 +227,16 @@ def analyze():
             'smart_model_summary': ai_advice,
             'bank_statement': bank_statement
         }
-        
+
         # Save results to JSON
         filename = save_results_to_json(results, user_name)
-        
+
         return jsonify({
             'success': True,
             'results': results,
             'filename': filename
         })
-        
+
     except Exception as e:
         return jsonify({
             'success': False,

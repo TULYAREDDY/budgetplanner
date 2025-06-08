@@ -1,0 +1,132 @@
+{
+  "user_name": "alex",
+  "salary": 50000.0,
+  "optimized_expenses": [
+    {
+      "expense_type": "Fixed",
+      "category": "Food",
+      "name": "Groceries",
+      "amount": 5000,
+      "priority": ""
+    },
+    {
+      "expense_type": "Fixed",
+      "category": "Housing",
+      "name": "Rent",
+      "amount": 15000,
+      "priority": ""
+    },
+    {
+      "expense_type": "Reducible",
+      "category": "Entertainment",
+      "name": "dining",
+      "amount": 3000.0,
+      "priority": "Medium"
+    },
+    {
+      "expense_type": "Reducible",
+      "category": "Personal Care",
+      "name": "cosmetics",
+      "amount": 900.0,
+      "priority": "Low"
+    }
+  ],
+  "emi_recommendation": {
+    "selected_plans": [
+      {
+        "name": "Car Loan",
+        "amount": 500000,
+        "interestRate": 9.2,
+        "durationMonths": 60,
+        "necessity": 6,
+        "monthlyPayment": 10427.778032942144
+      }
+    ],
+    "alternative_plans": [
+      {
+        "name": "Home Loan",
+        "amount": 5000000,
+        "interestRate": 8.5,
+        "durationMonths": 240,
+        "necessity": 8,
+        "monthlyPayment": 43391.161668276705
+      }
+    ],
+    "recommendation": "Based on your financial data, here are the recommended EMI plans that fit your budget and criteria."
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": [
+      {
+        "header": "1. Budget Analysis",
+        "body": "Monthly Income: ₹50,000.00
+Total Fixed Expenses (Groceries + Rent): ₹20,000.00
+Total Reducible Expenses (dining + cosmetics): ₹3,900.00
+Total EMI Payments (Home Loan + Car Loan): ₹53,818.94
+
+Total Expenses and EMIs: ₹77,718.94
+
+**Analysis:** Current expenses and EMIs exceed monthly income by ₹27,718.94. This indicates a significant deficit and unsustainable financial situation. Immediate action is required to address this imbalance."
+      },
+      {
+        "header": "2. Expense Optimization Suggestions",
+        "body": "*   **Reduce Dining Expenses:** Dining out is a medium-priority expense. Aim to reduce this by 50% or more (e.g., cooking at home more frequently).
+*   **Eliminate or Reduce Cosmetics Expenses:** This is a low-priority expense. Consider using cheaper alternatives or reducing the frequency of purchases.
+*   **Negotiate Loan Interest Rates:** Explore refinancing options for both the home loan and car loan to potentially lower interest rates.
+*   **Consider Selling Car:** If the car is not absolutely necessary for work, selling the car could alleviate a significant financial burden. Explore alternatives like public transport or ride-sharing.
+*   **Seek Alternatives:** If Rent is too high explore sharing accommodations"
+      },
+      {
+        "header": "3. Investment Recommendations",
+        "body": "Given the current deficit, investment should be prioritized *after* achieving a balanced budget. Once surplus income is available:
+*   **Start with Low-Risk Investments:** Consider liquid mutual funds or fixed deposits to build a safety net.
+*   **Gradually Diversify:** Once comfortable, explore index funds or ETFs for long-term growth.
+*   **Retirement Planning:** Consider investing in PPF or NPS for tax benefits and long-term retirement security.
+*   **Focus on debt repayment first**: Given that you are in debt, any surplus should first go towards debt repayment to reduce the high interest burden. "
+      },
+      {
+        "header": "4. Emergency Fund Advice",
+        "body": "Building an emergency fund is crucial, but *after* addressing the immediate deficit. Aim to accumulate 3-6 months' worth of essential living expenses in a readily accessible account (savings account, liquid fund).
+*   **Prioritize Savings:** Once the budget is balanced, allocate a fixed amount each month to the emergency fund.
+*   **Avoid Using for Non-Emergencies:** The emergency fund should only be used for unexpected expenses like medical bills or job loss."
+      },
+      {
+        "header": "5. Long-Term Financial Planning",
+        "body": "*   **Define Financial Goals:** Clearly define long-term goals like retirement, children's education, or buying a property.
+*   **Create a Financial Plan:** Develop a comprehensive plan that outlines how you will achieve these goals.
+*   **Regularly Review and Adjust:** Review your plan at least annually and make adjustments as needed based on changes in income, expenses, or market conditions.
+*   **Seek Professional Advice:** Consider consulting a financial advisor for personalized guidance."
+      },
+      {
+        "header": "6. Transaction Pattern Analysis",
+        "body": "To deeply understand your spending, use budgeting apps or analyze bank statements to categorize all transactions. Identify areas where spending is higher than expected and consider adjustments. Automate expense tracking for ongoing insights."
+      },
+      {
+        "header": "7. Spending Behavior Insights",
+        "body": "Based on provided data, spending behavior shows a need to reduce discretionary spending. Identify triggers for unnecessary purchases (e.g., stress, social pressure). Implement strategies to control impulse buying, such as a 24-hour waiting period before making non-essential purchases."
+      },
+      {
+        "header": "8. Cash Flow Optimization",
+        "body": "*   **Prioritize Debt Repayment:** Focus on reducing high-interest debt (car loan) first using the debt avalanche or debt snowball method.
+*   **Increase Income:** Explore opportunities to increase income through a side hustle, freelance work, or asking for a raise.
+*   **Automate Savings:** Set up automatic transfers from your checking account to your savings or investment accounts each month."
+      },
+      {
+        "header": "9. Banking Product Recommendations",
+        "body": "*   **High-Yield Savings Account:** Use a high-yield savings account for your emergency fund to earn a higher interest rate.
+*   **Credit Card with Cashback/Rewards:** If you use a credit card, choose one with cashback or rewards that align with your spending habits (e.g., grocery purchases).
+*   **Consider Consolidating Debt:** If eligible, explore a personal loan with a lower interest rate to consolidate high-interest debts."
+      }
+    ],
+    "timestamp": "2025-06-08 23:15:59"
+  },
+  "bank_statement": null
+}

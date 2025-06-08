@@ -572,12 +572,12 @@ body {
 }
 
 .analysis-grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, calc(33.333% - 0.666rem));
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-md);
     min-width: 0;
     overflow-x: hidden;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .analysis-card-item {

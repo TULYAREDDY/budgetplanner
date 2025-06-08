@@ -1,0 +1,106 @@
+{
+  "user_name": "alex",
+  "salary": 50000.0,
+  "optimized_expenses": [],
+  "emi_recommendation": {
+    "selected_plans": [
+      {
+        "name": "Car Loan",
+        "amount": 500000,
+        "interestRate": 9.2,
+        "durationMonths": 60,
+        "necessity": 6,
+        "monthlyPayment": 10427.778032942144
+      }
+    ],
+    "alternative_plans": [
+      {
+        "name": "Home Loan",
+        "amount": 5000000,
+        "interestRate": 8.5,
+        "durationMonths": 240,
+        "necessity": 8,
+        "monthlyPayment": 43391.161668276705
+      }
+    ],
+    "recommendation": "Based on your financial data, here are the recommended EMI plans that fit your budget and criteria."
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": [
+      {
+        "header": "1. Budget Analysis",
+        "body": "Your monthly income is ₹50,000.00.
+
+Your total EMI payments are ₹53,818.94 (₹43,391.16 Home Loan + ₹10,427.78 Car Loan). This already exceeds your monthly income.
+
+You are currently operating at a significant deficit. Immediate and drastic measures are required."
+      },
+      {
+        "header": "2. Expense Optimization Suggestions",
+        "body": "Given the extremely high EMI burden relative to income, explore the following urgently:
+
+*   **Negotiate Lower Interest Rates:** Contact your lenders (home loan and car loan) to negotiate for lower interest rates. Even a small reduction can significantly impact your monthly payments.
+*   **Refinance Loans:** Consider refinancing your loans with other lenders offering better terms. Compare options carefully.
+*   **Pre-payment (If Possible):** If you have any savings, use them to pre-pay a portion of either loan to reduce the principal amount and future interest.
+*   **Re-evaluate Necessity:** Honestly assess if the car loan is truly essential. Selling the car and using public transport/ride-sharing could be a drastic but necessary option.
+*   **Identify and Eliminate Non-Essential Expenses:** Since current expenses are not listed, you need to identify and eliminate all non-essential spending. This includes entertainment, dining out, subscriptions, etc.
+"
+      },
+      {
+        "header": "3. Investment Recommendations",
+        "body": "At this stage, with a deficit budget, investment is not a priority. Focus on stabilizing your finances and eliminating debt. Once your financial situation improves and you have a surplus, consider the following:
+
+*   **Debt Reduction:** Prioritize paying down high-interest debt (car loan) before considering investments.
+*   **Low-Risk Options:** Once you have a surplus, consider safe, low-risk options such as fixed deposits or recurring deposits to build a foundation.
+*   **Diversification:** As your income and savings grow, diversify into a mix of equity, debt, and other asset classes based on your risk tolerance and financial goals (after consulting a financial advisor)."
+      },
+      {
+        "header": "4. Emergency Fund Advice",
+        "body": "Given your current deficit, building an emergency fund should be a secondary priority *after* addressing the debt issue. However, it remains important in the long run.
+
+*   **Start Small:** Once your budget stabilizes, aim to save a small amount each month towards an emergency fund.
+*   **Target:** Gradually aim to build an emergency fund that covers 3-6 months of essential living expenses (excluding loan payments initially).
+*   **Accessible:** Keep the emergency fund in a readily accessible, liquid account like a savings account or a money market fund."
+      },
+      {
+        "header": "5. Long-Term Financial Planning",
+        "body": "Long-term financial planning is crucial, but requires addressing the immediate financial crisis first.
+
+*   **Set Goals:** Define your long-term financial goals (retirement, children's education, etc.).
+*   **Create a Budget:** Develop a realistic budget that allows for savings and investments after debt repayment.
+*   **Consult a Professional:** Consider consulting a financial advisor to create a personalized long-term financial plan once your finances are stable."
+      },
+      {
+        "header": "6. Transaction Pattern Analysis",
+        "body": "Since no expense data is provided, performing a transaction pattern analysis is not possible. Once you have categorized your expenses (using a budgeting app or manually tracking them), you can identify areas where you are overspending and adjust accordingly. Analyzing patterns will reveal spending habits and potential for optimization."
+      },
+      {
+        "header": "7. Spending Behavior Insights",
+        "body": "Without expense data, providing spending behavior insights is impossible. You need to actively track your spending for a few months to understand where your money is going and identify potential areas for improvement. Are you impulse buying? Are you overspending on certain categories? Tracking expenses will provide these insights."
+      },
+      {
+        "header": "8. Cash Flow Optimization",
+        "body": "Focus on increasing income and decreasing expenses (primarily loan EMIs). Prioritize paying down the car loan as it likely carries a higher interest rate than the home loan. Explore options to consolidate debt if possible. A balanced approach to income, expense, and debt is vital to improve cash flow."
+      },
+      {
+        "header": "9. Banking Product Recommendations",
+        "body": "Given your current financial situation, the immediate focus should be on debt management. Look for banking products that facilitate this, such as:
+
+*   **Balance Transfer Credit Cards:** Explore balance transfer credit cards with low introductory interest rates to potentially save on interest payments (but be cautious of transfer fees and ensure you can pay off the balance during the introductory period).
+*   **Debt Consolidation Loans:** Research debt consolidation loans from banks or credit unions, but compare interest rates and fees carefully.
+*   **High-Yield Savings Account:** Once you start building an emergency fund, consider a high-yield savings account to maximize interest earned."
+      }
+    ],
+    "timestamp": "2025-06-08 23:06:03"
+  },
+  "bank_statement": null
+}

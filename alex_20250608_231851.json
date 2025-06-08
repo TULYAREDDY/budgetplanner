@@ -1,0 +1,109 @@
+{
+  "user_name": "alex",
+  "salary": 50000.0,
+  "optimized_expenses": [
+    {
+      "expense_type": "Fixed",
+      "category": "Food",
+      "name": "Groceries",
+      "amount": 5000,
+      "priority": ""
+    },
+    {
+      "expense_type": "Fixed",
+      "category": "Housing",
+      "name": "Rent",
+      "amount": 15000,
+      "priority": ""
+    },
+    {
+      "expense_type": "Reducible",
+      "category": "Entertainment",
+      "name": "dining",
+      "amount": 3000.0,
+      "priority": "Medium"
+    },
+    {
+      "expense_type": "Reducible",
+      "category": "Personal Care",
+      "name": "comsetics",
+      "amount": 900.0,
+      "priority": "Low"
+    }
+  ],
+  "emi_recommendation": {
+    "selected_plans": [
+      {
+        "name": "Car Loan",
+        "amount": 500000,
+        "interestRate": 9.2,
+        "durationMonths": 60,
+        "necessity": 6,
+        "monthlyPayment": 10427.778032942144
+      }
+    ],
+    "alternative_plans": [
+      {
+        "name": "Home Loan",
+        "amount": 5000000,
+        "interestRate": 8.5,
+        "durationMonths": 240,
+        "necessity": 8,
+        "monthlyPayment": 43391.161668276705
+      }
+    ],
+    "recommendation": "Based on your financial data, here are the recommended EMI plans that fit your budget and criteria."
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": [
+      {
+        "header": "1. Budget Analysis",
+        "body": "Your monthly income is ₹50,000.00. Your fixed expenses (Groceries, Rent) total ₹20,000. Your reducible expenses (Dining, Cosmetics) total ₹3,900. Your EMI plans total ₹53,818.94.  This means your total expenses are ₹77,718.94. This results in a significant monthly deficit of ₹27,718.94. Immediate action is required to address this imbalance."
+      },
+      {
+        "header": "2. Expense Optimization Suggestions",
+        "body": "Prioritize reducing reducible expenses. 'Dining' expense should be reviewed and possibly significantly decreased or removed. The cosmetics expense should be reduced. Explore cheaper alternatives. Negotiate better deals for groceries and rent where possible. It is critical to find ways to cut back on spending to align with your income."
+      },
+      {
+        "header": "3. Investment Recommendations",
+        "body": "Given your current financial strain, focus on debt management before considering investments. Once you have a surplus, consider low-risk investments such as liquid mutual funds or fixed deposits to build capital. Prioritize paying down the high-interest car loan. Avoid high-risk investments until your debt is under control and emergency fund is established. Post financial stability, consider debt mutual funds."
+      },
+      {
+        "header": "4. Emergency Fund Advice",
+        "body": "You currently have a negative cash flow, so building an emergency fund is difficult. Once you are in a surplus position, aim to save 3-6 months of essential living expenses in a highly liquid account. This fund should cover unforeseen expenses like job loss or medical emergencies. Start with small, consistent contributions."
+      },
+      {
+        "header": "5. Long-Term Financial Planning",
+        "body": "Long-term financial planning should include goals like retirement planning and children's education (if applicable). Once you have a surplus, consult a financial advisor to create a diversified investment portfolio tailored to your risk tolerance and goals. Consider investments in equities, bonds, and real estate (after debt is managed and emergency fund is fully funded). Review your plan annually."
+      },
+      {
+        "header": "6. Transaction Pattern Analysis",
+        "body": "Based on the provided data, your spending is heavily focused on debt repayment and fixed expenses. A detailed analysis of your bank statements and credit card transactions is needed to identify other areas where you can potentially cut spending and optimize your budget. Categorize all expenses for comprehensive insights."
+      },
+      {
+        "header": "7. Spending Behavior Insights",
+        "body": "Your spending behavior shows a tendency to spend beyond your means, leading to a significant deficit. Understanding your spending triggers (e.g., emotional spending, impulsive purchases) is crucial. Implement strategies like the 24-hour rule (delaying non-essential purchases for 24 hours) and mindful budgeting to curb overspending."
+      },
+      {
+        "header": "8. Cash Flow Optimization",
+        "body": "The primary goal is to achieve a positive cash flow. Aggressively reduce expenses, particularly reducible ones. Explore opportunities to increase your income, such as freelancing or a side business. Consider refinancing your loans for lower interest rates or longer repayment terms (be cautious about extending loan duration excessively).",
+        "priority": "High"
+      },
+      {
+        "header": "9. Banking Product Recommendations",
+        "body": "Review your current banking products. Ensure you are getting the best possible interest rates on savings accounts. Look for credit cards with low interest rates (only use credit cards responsibly - paying off balance each month is ideal). Consider opening a separate high-yield savings account specifically for your emergency fund (once you have a surplus). Check for any unnecessary bank fees and consolidate accounts if needed."
+      }
+    ],
+    "timestamp": "2025-06-08 23:18:45"
+  },
+  "bank_statement": null
+}

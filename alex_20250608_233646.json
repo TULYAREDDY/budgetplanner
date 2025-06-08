@@ -1,0 +1,121 @@
+{
+  "user_name": "alex",
+  "salary": 50000.0,
+  "optimized_expenses": [
+    {
+      "expense_type": "Fixed",
+      "category": "Food",
+      "name": "Groceries",
+      "amount": 5000,
+      "priority": ""
+    },
+    {
+      "expense_type": "Fixed",
+      "category": "Housing",
+      "name": "Rent",
+      "amount": 15000,
+      "priority": ""
+    },
+    {
+      "expense_type": "Reducible",
+      "category": "Entertainment",
+      "name": "dining",
+      "amount": 3000.0,
+      "priority": "Medium"
+    },
+    {
+      "expense_type": "Reducible",
+      "category": "Personal Care",
+      "name": "cosmetics",
+      "amount": 900.0,
+      "priority": "Low"
+    }
+  ],
+  "emi_recommendation": {
+    "selected_plans": [
+      {
+        "name": "Car Loan",
+        "amount": 500000,
+        "interestRate": 9.2,
+        "durationMonths": 60,
+        "necessity": 6,
+        "monthlyPayment": 10427.778032942144
+      }
+    ],
+    "alternative_plans": [
+      {
+        "name": "Home Loan",
+        "amount": 5000000,
+        "interestRate": 8.5,
+        "durationMonths": 240,
+        "necessity": 8,
+        "monthlyPayment": 43391.161668276705
+      }
+    ],
+    "recommendation": "Based on your financial data, here are the recommended EMI plans that fit your budget and criteria."
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": [
+      {
+        "header": "1. Budget Analysis",
+        "body": "Your monthly income is ₹50,000.00. Current monthly expenses (Groceries, Rent, Entertainment, Cosmetics) total ₹23,900.00. Loan EMIs (Home Loan and Car Loan) sum up to ₹53,818.94.
+
+This indicates a significant shortfall, as expenses and EMIs exceed income by ₹27,718.94. Immediate action is required to address this imbalance through expense reduction and/or income enhancement."
+      },
+      {
+        "header": "2. Expense Optimization Suggestions",
+        "body": "Focus on reducing 'Reducible' expenses:
+*   **Dining:** Reduce dining out frequency and explore home-cooked alternatives.
+*   **Cosmetics:** Evaluate the necessity of cosmetic purchases and consider cheaper alternatives or reducing consumption.
+*   **Negotiate:** See if any reductions can be applied to the costs of other expenses.
+*   **Car Loan:** Given the current financial situation, exploring options to refinance at a lower interest rate or selling the car to eliminate this loan entirely is worth investigating."
+      },
+      {
+        "header": "3. Investment Recommendations",
+        "body": "Given the current financial shortfall, investing is not advisable until the budget is balanced. Focus on debt reduction and expense management first. Once a surplus is achieved, consider:
+*   **High-Yield Savings Accounts/Fixed Deposits:** For short-term, low-risk savings.
+*   **Mutual Funds (Index Funds/Debt Funds):** For long-term growth, after careful risk assessment.
+*   **Systematic Investment Plans (SIPs):** Invest small, regular amounts to build wealth over time."
+      },
+      {
+        "header": "4. Emergency Fund Advice",
+        "body": "Building an emergency fund is crucial. Aim for 3-6 months' worth of essential living expenses (excluding loan EMIs). Prioritize this after addressing the immediate budget shortfall. Start with a small, achievable target and gradually increase it. Keep the emergency fund in a readily accessible, liquid account (e.g., high-yield savings account)."
+      },
+      {
+        "header": "5. Long-Term Financial Planning",
+        "body": "Once the budget is stabilized and an emergency fund is established, focus on long-term goals like retirement planning. Calculate your retirement needs and explore suitable investment options. Consider consulting a financial advisor for personalized guidance. Review your financial plan annually and adjust it as needed."
+      },
+      {
+        "header": "6. Transaction Pattern Analysis",
+        "body": "Review your bank statements and credit card statements to identify spending patterns. Categorize your expenses (e.g., food, transportation, entertainment) to gain insights into where your money is going. Use budgeting apps or spreadsheets to track your expenses effectively. This can help you identify areas for potential savings."
+      },
+      {
+        "header": "7. Spending Behavior Insights",
+        "body": "Identify your spending triggers and habits. Are you prone to impulse purchases? Do you spend more when you're stressed or bored? Understand these patterns and develop strategies to manage them. For example, avoid shopping when you're hungry or tired. Unsubscribe from marketing emails that tempt you to spend unnecessarily."
+      },
+      {
+        "header": "8. Cash Flow Optimization",
+        "body": "Explore ways to increase your income. This could include taking on a side hustle, freelancing, or asking for a raise at work. Review your recurring bills (e.g., internet, phone) and negotiate for better rates. Automate your savings and bill payments to avoid late fees and ensure consistent progress towards your financial goals."
+      },
+      {
+        "header": "9. Banking Product Recommendations",
+        "body": "Given your current debt burden, consider the following banking products:
+*   **Balance Transfer Credit Cards:** If you have high-interest credit card debt, transfer it to a card with a lower interest rate or a 0% introductory APR.
+*   **Debt Consolidation Loan:** Consolidate your debts into a single loan with a lower interest rate. However, be mindful of the terms and fees associated with the loan.
+*   **High-Yield Savings Account:** For parking your emergency fund and other short-term savings.
+*   **Checking Account with rewards:** Can help in receiving cashback or discounts on transactions."
+      }
+    ],
+    "timestamp": "2025-06-08 23:36:40"
+  },
+  "bank_statement": null
+}

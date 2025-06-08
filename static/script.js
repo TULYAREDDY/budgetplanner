@@ -35,7 +35,14 @@ function createExpenseRow(expense = {}) {
     const rowDiv = document.createElement('div');
     rowDiv.className = 'row g-2 align-items-end mb-2 expense-item-row';
     rowDiv.innerHTML = `
-        <div class="col-md-3">
+        <div class="col-md-2">
+            <label class="form-label visually-hidden">Expense Type</label>
+            <select class="form-select expense-type" required>
+                <option value="" disabled ${!expense.expenseType ? 'selected' : ''}>Select Type</option>
+                ${["Fixed", "Reducible"].map(type => `<option value="${type}" ${expense.expenseType === type ? 'selected' : ''}>${type}</option>`).join('')}
+            </select>
+        </div>
+        <div class="col-md-2">
             <label class="form-label visually-hidden">Category</label>
             <select class="form-select expense-category" required>
                 <option value="" disabled ${!expense.category ? 'selected' : ''}>Select Category</option>
@@ -46,7 +53,7 @@ function createExpenseRow(expense = {}) {
             <label class="form-label visually-hidden">Name</label>
             <input type="text" class="form-control expense-name" placeholder="Expense Name" value="${expense.name || ''}" required>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <label class="form-label visually-hidden">Amount</label>
             <input type="number" class="form-control expense-amount" placeholder="Amount (₹)" min="0" step="0.01" value="${expense.amount || ''}" required>
         </div>
@@ -61,6 +68,24 @@ function createExpenseRow(expense = {}) {
             <button type="button" class="btn btn-outline-danger w-100 remove-item-btn"><i class="fas fa-times"></i></button>
         </div>
     `;
+    // Show or hide priority dropdown based on expense type
+    const expenseTypeSelect = rowDiv.querySelector('.expense-type');
+    const prioritySelect = rowDiv.querySelector('.expense-priority');
+    function togglePriority() {
+        if (expenseTypeSelect.value === 'Fixed') {
+            prioritySelect.style.display = 'none';
+            prioritySelect.value = '';
+            prioritySelect.required = false;
+        } else {
+            prioritySelect.style.display = 'block';
+            prioritySelect.required = true;
+            if (!prioritySelect.value) {
+                prioritySelect.value = 'Medium';
+            }
+        }
+    }
+    expenseTypeSelect.addEventListener('change', togglePriority);
+    togglePriority(); // Initial call
     return rowDiv;
 }
 
@@ -159,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const expenses = [];
             document.querySelectorAll('.expense-item-row').forEach(function(row) {
                 expenses.push({
+                    expense_type: row.querySelector('.expense-type').value,
                     category: row.querySelector('.expense-category').value,
                     name: row.querySelector('.expense-name').value,
                     amount: parseFloat(row.querySelector('.expense-amount').value || 0),
@@ -235,35 +261,60 @@ document.addEventListener('DOMContentLoaded', function() {
                                 </div>
                         `;
 
-                        // 2. Optimized Expenses
+            // 2. Optimized Expenses
+            allResultsHtml += `
+                    <div class="results-grid-item-tall expense-card">
+                        <div class="card-body">
+                            <div class="card-header-custom">
+                                <i class="fas fa-chart-pie"></i>
+                                <h4>Optimized Expenses</h4>
+                            </div>
+                            <div class="expense-list">`;
+            if (response.results.optimized_expenses && response.results.optimized_expenses.length > 0) {
+                // Show only reducible expenses that were modified
+                const originalReducibleExpenses = response.results.expenses ? response.results.expenses.filter(exp => exp.expense_type === 'Reducible') : [];
+                const optimizedReducibleExpenses = response.results.optimized_expenses.filter(exp => exp.expense_type === 'Reducible');
+
+                // Map original expenses by name and category for comparison
+                const originalMap = {};
+                originalReducibleExpenses.forEach(exp => {
+                    originalMap[exp.name + '|' + exp.category] = exp.amount;
+                });
+
+                // List only those reducible expenses where amount changed or all reducible expenses if none changed
+                let changedExpenses = optimizedReducibleExpenses.filter(exp => {
+                    const key = exp.name + '|' + exp.category;
+                    return originalMap[key] !== undefined && originalMap[key] !== exp.amount;
+                });
+
+                if (changedExpenses.length === 0) {
+                    // If no changes, show all reducible expenses
+                    changedExpenses = optimizedReducibleExpenses;
+                }
+
+                if (changedExpenses.length > 0) {
+                    changedExpenses.forEach(exp => {
                         allResultsHtml += `
-                                <div class="results-grid-item-tall expense-card">
-                                    <div class="card-body">
-                                        <div class="card-header-custom">
-                                            <i class="fas fa-chart-pie"></i>
-                                            <h4>Optimized Expenses</h4>
-                                        </div>
-                                        <div class="expense-list">`;
-                        if (response.results.optimized_expenses && response.results.optimized_expenses.length > 0) {
-                            response.results.optimized_expenses.forEach(exp => {
-                                allResultsHtml += `
-                                    <div class="expense-item">
-                                        <div class="expense-info">
-                                            <i class="fas fa-tag"></i>
-                                            <span class="expense-name">${exp.name}</span>
-                                            <span class="expense-category">${exp.category}</span>
-                                        </div>
-                                        <div class="expense-amount">₹${exp.amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
-                                    </div>`;
-                            });
-                        } else {
-                            allResultsHtml += '<p class="text-muted">No optimized expenses available.</p>';
-                        }
-                        allResultsHtml += `
-                                        </div>
-                                    </div>
+                            <div class="expense-item">
+                                <div class="expense-info">
+                                    <i class="fas fa-tag"></i>
+                                    <span class="expense-name">${exp.name}</span>
+                                    <span class="expense-category">${exp.category}</span>
                                 </div>
-                        `;
+                                <div class="expense-amount">₹${exp.amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
+                            </div>`;
+                    });
+                } else {
+                    allResultsHtml += '<p class="text-muted">No optimized reducible expenses available.</p>';
+                }
+            } else {
+                allResultsHtml += '<p class="text-muted">No optimized expenses available.</p>';
+            }
+            allResultsHtml += `
+                            </div>
+                        </div>
+                    </div>
+            `;
 
                         // 3. EMI Recommendation
                         if (response.results.emi_recommendation && response.results.emi_recommendation.selected_plans && response.results.emi_recommendation.selected_plans.length > 0) {

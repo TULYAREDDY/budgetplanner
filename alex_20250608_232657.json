@@ -1,0 +1,130 @@
+{
+  "user_name": "alex",
+  "salary": 500000.0,
+  "optimized_expenses": [
+    {
+      "expense_type": "Fixed",
+      "category": "Food",
+      "name": "Groceries",
+      "amount": 5000,
+      "priority": ""
+    },
+    {
+      "expense_type": "Fixed",
+      "category": "Housing",
+      "name": "Rent",
+      "amount": 15000,
+      "priority": ""
+    },
+    {
+      "expense_type": "Reducible",
+      "category": "Entertainment",
+      "name": "dining",
+      "amount": 3000.0,
+      "priority": "Medium"
+    },
+    {
+      "expense_type": "Reducible",
+      "category": "Personal Care",
+      "name": "comsetics",
+      "amount": 900.0,
+      "priority": "Low"
+    }
+  ],
+  "emi_recommendation": {
+    "selected_plans": [
+      {
+        "name": "Home Loan",
+        "amount": 5000000,
+        "interestRate": 8.5,
+        "durationMonths": 240,
+        "necessity": 8,
+        "monthlyPayment": 43391.161668276705
+      },
+      {
+        "name": "Car Loan",
+        "amount": 500000,
+        "interestRate": 9.2,
+        "durationMonths": 60,
+        "necessity": 6,
+        "monthlyPayment": 10427.778032942144
+      }
+    ],
+    "alternative_plans": [],
+    "recommendation": "Based on your financial data, here are the recommended EMI plans that fit your budget and criteria."
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": [
+      {
+        "header": "1. Budget Analysis",
+        "body": "Monthly Income: ₹500,000.00
+Total Expenses (Fixed): ₹20,000.00 (Groceries + Rent)
+Total Expenses (Reducible): ₹3,900.00 (Dining + Cosmetics)
+Total EMI Payments: ₹53,818.94 (Home Loan + Car Loan)
+Total Monthly Spending: ₹77,718.94
+Remaining Income (Post-Expenses & EMIs): ₹422,281.06
+This leaves a significant surplus for savings and investment."
+      },
+      {
+        "header": "2. Expense Optimization Suggestions",
+        "body": "- **Reducible Expenses:**
+  - **Dining:** Reduce dining expenses. Aim for ₹1500-₹2000/month. 
+  - **Cosmetics:** Cosmetics is low priority expense; reduce as much as possible. Explore cheaper alternatives, aim for ₹500/month.
+- **Fixed Expenses:** While rent is fixed, consider if downsizing is possible in the long term. For groceries, plan meals to minimize waste and optimize spending. Look for discounts and bulk buying opportunities.
+-Review expenses, create tracking in the short term (3 month) and remove unnecessary ones."
+      },
+      {
+        "header": "3. Investment Recommendations",
+        "body": "Given the substantial surplus, aggressive investment strategies are feasible.
+- **High Growth Portfolio (50%):** Invest in diversified equity mutual funds (index funds, large cap, and mid-cap funds) for long-term growth.
+- **Real Estate (25%):** Consider additional real estate investments for diversification if your current home loan is manageable.
+- **Debt Instruments (25%):** Allocate to debt funds or government bonds for stability and regular income.
+Rebalance portfolio annually."
+      },
+      {
+        "header": "4. Emergency Fund Advice",
+        "body": "Aim for 6-12 months of essential living expenses (including EMIs) in a highly liquid account.
+- **Target Amount:** Ideally, ₹300,000 - ₹600,000.
+- **Placement:** Savings account, liquid mutual funds, or fixed deposits (easily accessible).
+- **Replenishment:** Replenish the fund immediately after any withdrawals."
+      },
+      {
+        "header": "5. Long-Term Financial Planning",
+        "body": "- **Retirement Planning:** Start contributing to retirement accounts (EPF, NPS) and consider additional investment options like PPF and equity-linked savings schemes (ELSS) for tax benefits.
+- **Goal Setting:** Define specific financial goals (e.g., child's education, early retirement) with clear timelines and investment plans.
+- **Regular Review:** Review and adjust your financial plan annually to adapt to changing circumstances and market conditions."
+      },
+      {
+        "header": "6. Transaction Pattern Analysis",
+        "body": "A thorough review of your bank and card statements is crucial. Categorize all transactions (beyond the provided expenses) to identify spending patterns. Look for recurring subscriptions or unnecessary expenses that can be eliminated. Use budgeting apps or spreadsheets for detailed tracking."
+      },
+      {
+        "header": "7. Spending Behavior Insights",
+        "body": "Based on the provided data, spending is controlled, but there is room for optimization in entertainment and personal care. Track all purchases carefully and identify triggers for impulse buys. Delay purchases to assess needs versus wants. Consider a 'no-spend' week/month to reset spending habits."
+      },
+      {
+        "header": "8. Cash Flow Optimization",
+        "body": "- **Automate Savings:** Set up automatic transfers from your salary account to investment accounts immediately after receiving your salary.
+- **Negotiate Bills:** Regularly review and negotiate bills (insurance, utilities) to reduce costs.
+- **Refinance Loans:** Check for opportunities to refinance existing loans (home loan, car loan) at lower interest rates to reduce monthly payments and overall interest paid."
+      },
+      {
+        "header": "9. Banking Product Recommendations",
+        "body": "- **High-Interest Savings Account:** Consider opening a high-yield savings account or sweep-in fixed deposit to earn better returns on your emergency fund.
+- **Credit Cards:** Use credit cards strategically for rewards and benefits, but ensure timely payments to avoid interest charges. Choose cards that align with your spending patterns (e.g., travel rewards if you travel frequently).
+- **Investment Platforms:** Utilize online brokerage accounts or investment platforms for easy access to a wide range of investment options."
+      }
+    ],
+    "timestamp": "2025-06-08 23:26:49"
+  },
+  "bank_statement": null
+}

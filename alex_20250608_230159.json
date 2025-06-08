@@ -1,0 +1,116 @@
+{
+  "user_name": "alex",
+  "salary": 50000.0,
+  "optimized_expenses": [
+    {
+      "category": "Food",
+      "name": "Groceries",
+      "amount": 3000.0,
+      "priority": ""
+    },
+    {
+      "category": "Housing",
+      "name": "Rent",
+      "amount": 9000.0,
+      "priority": ""
+    },
+    {
+      "category": "Entertainment",
+      "name": "dining",
+      "amount": 3000.0,
+      "priority": "Medium"
+    },
+    {
+      "category": "Personal Care",
+      "name": "cosmetics",
+      "amount": 900.0,
+      "priority": "Low"
+    }
+  ],
+  "emi_recommendation": {
+    "selected_plans": [
+      {
+        "name": "Car Loan",
+        "amount": 500000,
+        "interestRate": 9.2,
+        "durationMonths": 60,
+        "necessity": 6,
+        "monthlyPayment": 10427.778032942144
+      }
+    ],
+    "alternative_plans": [
+      {
+        "name": "Home Loan",
+        "amount": 5000000,
+        "interestRate": 8.5,
+        "durationMonths": 240,
+        "necessity": 8,
+        "monthlyPayment": 43391.161668276705
+      }
+    ],
+    "recommendation": "Based on your financial data, here are the recommended EMI plans that fit your budget and criteria."
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": [
+      {
+        "header": "1. Budget Analysis",
+        "body": "Your monthly income is ₹50,000.00.  Your current expenses (Groceries ₹3000, Rent ₹9000, Dining ₹3000, Cosmetics ₹900) total ₹15,900. Your total EMI payments (Home Loan ₹43391.16, Car Loan ₹10427.78) sum to ₹53,818.94.  This means you are currently operating at a deficit of ₹19,718.94 per month (₹50,000 - ₹15,900 - ₹53,818.94). Immediate action is required to address this imbalance."
+      },
+      {
+        "header": "2. Expense Optimization Suggestions",
+        "body": "Given the deficit, significant expense reduction is necessary.
+
+*   **Dining:** Reduce dining expenses. Aim for cooking at home more often. Consider setting a limit of ₹1000-₹1500 on dining.
+*   **Cosmetics:** Cut back significantly on cosmetics. Prioritize essential items and reduce discretionary spending. Consider cheaper alternatives.
+*   **Review Loans:** Explore refinancing options for both your Home Loan and Car Loan to potentially lower interest rates and monthly payments.
+*   **Rent:** While difficult, consider if a more affordable living situation is possible in the long term."
+      },
+      {
+        "header": "3. Investment Recommendations",
+        "body": "Currently, with a deficit, investing is not advisable.  Focus on balancing your budget first. Once a surplus is achieved, consider the following:
+
+*   **Prioritize Debt Reduction:**  Once you have a surplus, divert extra funds to aggressively paying down your highest interest debt (likely the car loan).
+*   **After Debt Reduction:**  Once debts are under control, consider a diversified portfolio of index funds and/or mutual funds via SIP (Systematic Investment Plan).  Align investment choices with your risk tolerance and long-term goals. Consult a financial advisor for personalized advice."
+      },
+      {
+        "header": "4. Emergency Fund Advice",
+        "body": "Building an emergency fund is crucial, but not possible while operating at a deficit. Once you achieve a surplus, aim to save 3-6 months' worth of essential living expenses (including loan payments). Keep this fund in a high-liquidity, easily accessible account such as a savings account or a liquid mutual fund."
+      },
+      {
+        "header": "5. Long-Term Financial Planning",
+        "body": "Your long-term financial plan should include goals like retirement planning, children's education (if applicable), and significant purchases.  Once your immediate financial situation stabilizes, develop a comprehensive plan, including:
+
+*   **Retirement Planning:**  Begin contributing to retirement accounts (e.g., NPS, EPF, or other retirement funds). 
+*   **Goal Setting:** Clearly define your long-term financial goals and create a roadmap to achieve them.
+*   **Insurance:**  Ensure you have adequate health and life insurance coverage to protect yourself and your family from unforeseen events."
+      },
+      {
+        "header": "6. Transaction Pattern Analysis",
+        "body": "Analyze your bank and credit card statements for the past 3-6 months. Identify spending patterns and areas where you can reduce expenses. Categorize your transactions to gain a better understanding of where your money is going. Look for recurring subscriptions or unnecessary purchases."
+      },
+      {
+        "header": "7. Spending Behavior Insights",
+        "body": "Understand your spending triggers. Are you an impulse buyer? Do you spend more when you're stressed? Identifying your spending habits can help you control them. Consider using budgeting apps or tools to track your expenses and stay accountable."
+      },
+      {
+        "header": "8. Cash Flow Optimization",
+        "body": "Given the current deficit, optimizing cash flow is paramount.  Negotiate payment plans with creditors if possible. Explore opportunities to increase your income, such as a side hustle or seeking a higher-paying job. Delay any major purchases until your finances are stable."
+      },
+      {
+        "header": "9. Banking Product Recommendations",
+        "body": "Evaluate your current banking products. Look for accounts with higher interest rates or lower fees. Consider using a rewards credit card for necessary expenses, but ensure you can pay the balance in full each month to avoid accumulating debt. Comparison shop for better banking options."
+      }
+    ],
+    "timestamp": "2025-06-08 23:01:52"
+  },
+  "bank_statement": null
+}
