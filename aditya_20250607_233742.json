@@ -1,0 +1,90 @@
+{
+  "user_name": "Aditya",
+  "salary": 100000.0,
+  "optimized_expenses": [
+    {
+      "category": "Food",
+      "name": "Groceries",
+      "amount": 4500.0,
+      "priority": "High"
+    },
+    {
+      "category": "Housing",
+      "name": "Rent",
+      "amount": 13500.0,
+      "priority": "High"
+    }
+  ],
+  "emi_recommendation": {
+    "best_plan": {
+      "name": "Car Loan",
+      "amount": 500000,
+      "interestRate": 9.2,
+      "durationMonths": 60,
+      "necessity": 6,
+      "monthlyPayment": 10427.778032942144
+    },
+    "alternative_plans": [
+      {
+        "name": "Home Loan",
+        "amount": 5000000,
+        "interestRate": 8.5,
+        "durationMonths": 240,
+        "necessity": 8,
+        "monthlyPayment": 43391.161668276705
+      }
+    ]
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development.",
+      "Review high priority expenses carefully before making cuts."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": [
+      {
+        "header": "1. Budget Analysis",
+        "body": "Your monthly income is ₹100,000. Your fixed expenses include Rent (₹13,500), Groceries (₹4,500), Home Loan EMI (₹43,391.16), and Car Loan EMI (₹10,427.78).  This totals ₹71,818.94, leaving approximately ₹28,181.06 for other expenses, savings, and investments. A detailed analysis of your bank statement is crucial to understand where the remaining funds are going."
+      },
+      {
+        "header": "2. Expense Optimization Suggestions",
+        "body": "Given that 'Groceries' are listed as 'High' priority, exploring options for reducing costs without compromising quality is advisable. Consider comparing prices at different stores or using coupons. Review your bank statement for recurring subscriptions or unnecessary discretionary spending that can be reduced or eliminated. Prioritize necessities over wants to free up cash flow."
+      },
+      {
+        "header": "3. Investment Recommendations",
+        "body": "With ₹28,181.06 potentially available, allocating a portion to investments is crucial.  Based on your risk tolerance (which needs assessment), consider diversifying into a mix of equities (e.g., index funds, ETFs) and debt instruments (e.g., bonds, fixed deposits). Start with a small percentage initially and gradually increase it as your comfort level grows. Consult a financial advisor for personalized recommendations."
+      },
+      {
+        "header": "4. Emergency Fund Advice",
+        "body": "An emergency fund covering 3-6 months of essential expenses is vital.  Calculate your monthly essential expenses (rent, loan EMIs, groceries, utilities). Aim to build a fund that covers this amount multiplied by 3-6. Keep this fund in a highly liquid and easily accessible account, such as a savings account or money market fund. Start by allocating a small amount each month until you reach your target."
+      },
+      {
+        "header": "5. Long-Term Financial Planning",
+        "body": "Plan for retirement. Determine your retirement goals and the amount you'll need. Start investing early in retirement accounts like EPF (Employee Provident Fund) and consider other options like NPS (National Pension System). Review your long-term goals annually and adjust your financial plan accordingly. Consider consulting a financial advisor for a comprehensive retirement plan."
+      },
+      {
+        "header": "6. Transaction Pattern Analysis",
+        "body": "The provided bank statement ('bank_statement_6.json') needs to be analyzed to identify your spending patterns. Look for recurring transactions, large one-time expenses, and overall cash flow trends. Categorize your transactions (e.g., entertainment, travel, utilities) to understand where your money is being spent. This analysis will reveal areas where you can potentially save money."
+      },
+      {
+        "header": "7. Spending Behavior Insights",
+        "body": "By analyzing your spending patterns (from the bank statement), you can gain insights into your spending behavior. Are you prone to impulse purchases? Do you spend more on weekends? Identifying these patterns allows you to make conscious decisions about your spending habits and develop strategies to control them. Consider using budgeting apps or spreadsheets to track your spending effectively."
+      },
+      {
+        "header": "8. Cash Flow Optimization",
+        "body": "Optimize your cash flow by reducing unnecessary expenses and increasing income. Explore opportunities to earn extra income, such as freelancing or a side business. Automate your savings and investments to ensure you consistently allocate funds to your financial goals.  Negotiate better deals on utilities, insurance, and other recurring expenses."
+      },
+      {
+        "header": "9. Banking Product Recommendations",
+        "body": "Based on your salary and transaction patterns, consider exploring banking products that offer benefits aligned with your needs. Look for high-interest savings accounts to maximize returns on your emergency fund. Credit cards with rewards programs can be beneficial if used responsibly. Explore options for consolidating debt if you have other high-interest loans or credit card balances. Consider opening a dedicated investment account with a brokerage firm."
+      }
+    ],
+    "timestamp": "2025-06-07 23:37:36"
+  },
+  "bank_statement": "bank_statement_6.json"
+}

@@ -1,0 +1,93 @@
+{
+    "bank": "HDFC Bank Ltd.",
+    "account_info": {
+        "customer_name": "Mr. Aditya Sharma",
+        "account_number": "XXXXXXXX6250",
+        "account_type": "Savings Account",
+        "statement_period": "01-May-2025 to 31-May-2025",
+        "opening_balance": 49456,
+        "closing_balance": 42297.29
+    },
+    "transactions": [
+        {
+            "date": "04-May-2025",
+            "particulars": "ATM Withdrawal",
+            "cheque_no": "",
+            "debit": 1366.65,
+            "credit": 0.0,
+            "balance": 48089.35
+        },
+        {
+            "date": "05-May-2025",
+            "particulars": "Salary Credit",
+            "cheque_no": "",
+            "debit": 6440.17,
+            "credit": 0.0,
+            "balance": 41649.18
+        },
+        {
+            "date": "08-May-2025",
+            "particulars": "Interest Credit",
+            "cheque_no": "",
+            "debit": 3967.87,
+            "credit": 0.0,
+            "balance": 37681.31
+        },
+        {
+            "date": "10-May-2025",
+            "particulars": "Interest Credit",
+            "cheque_no": "",
+            "debit": 0.0,
+            "credit": 5265.37,
+            "balance": 42946.68
+        },
+        {
+            "date": "13-May-2025",
+            "particulars": "UPI Transfer",
+            "cheque_no": "",
+            "debit": 3695.37,
+            "credit": 0.0,
+            "balance": 39251.31
+        },
+        {
+            "date": "14-May-2025",
+            "particulars": "Salary Credit",
+            "cheque_no": "",
+            "debit": 0.0,
+            "credit": 9821.12,
+            "balance": 49072.43
+        },
+        {
+            "date": "17-May-2025",
+            "particulars": "Salary Credit",
+            "cheque_no": "",
+            "debit": 0.0,
+            "credit": 4466.8,
+            "balance": 53539.23
+        },
+        {
+            "date": "19-May-2025",
+            "particulars": "Salary Credit",
+            "cheque_no": "177357",
+            "debit": 4982.19,
+            "credit": 0.0,
+            "balance": 48557.04
+        },
+        {
+            "date": "21-May-2025",
+            "particulars": "Interest Credit",
+            "cheque_no": "",
+            "debit": 7060.76,
+            "credit": 0.0,
+            "balance": 41496.28
+        },
+        {
+            "date": "23-May-2025",
+            "particulars": "ATM Withdrawal",
+            "cheque_no": "",
+            "debit": 0.0,
+            "credit": 801.01,
+            "balance": 42297.29
+        }
+    ]
+}

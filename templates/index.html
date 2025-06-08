@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Optimization System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v={{ current_time_version }}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" class="text-white text-decoration-none h4 mb-0">Financial Optimizer</a>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#analysis">Analysis</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#results">Results</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Optimize Your Finances with AI</h1>
+            <p class="lead">Get personalized financial insights and intelligent recommendations.</p>
+            <a href="#analysis" class="btn btn-light btn-lg mt-3">Start Your Analysis</a>
+        </div>
+    </section>
+
+    <!-- Analysis Form Section -->
+    <section id="analysis" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Enter Your Financial Details</h2>
+            <div class="card p-4 shadow-sm">
+                <form id="financial-form">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="userName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="userName" name="user_name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="monthlySalary" class="form-label">Monthly Salary (₹)</label>
+                            <input type="number" class="form-control" id="monthlySalary" name="salary" placeholder="Enter monthly salary" min="0" step="0.01" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label d-block">Expenses</label>
+                        <div id="expenses-container"></div>
+                        <button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="add-expense-btn">+ Add Expense</button>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label d-block">EMI Plans</label>
+                        <div id="emi-plans-container"></div>
+                        <button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="add-emi-btn">+ Add EMI Plan</button>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="bankStatement" class="form-label">Upload Bank Statement (optional)</label>
+                        <input type="file" class="form-control" id="bankStatement" name="bank_statement" accept=".json">
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">Analyze My Finances</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="py-5 d-none">
+        <div class="container">
+            <h2 class="text-center mb-4">Your Financial Analysis Results</h2>
+            <div class="card p-4 shadow-sm">
+                <div id="results-content"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p>&copy; 2024 Financial Optimization System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='script.js', v=current_time_version) }}"></script>
+</body>
+</html> 

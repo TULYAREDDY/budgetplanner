@@ -1,0 +1,207 @@
+{
+  "user_name": "Aditya",
+  "salary": 100000.0,
+  "optimized_expenses": [
+    {
+      "category": "Food",
+      "name": "Groceries",
+      "amount": 4500.0,
+      "priority": "High"
+    },
+    {
+      "category": "Housing",
+      "name": "Rent",
+      "amount": 13500.0,
+      "priority": "High"
+    }
+  ],
+  "emi_recommendation": {
+    "selected_plans": [
+      {
+        "name": "Car Loan",
+        "amount": 500000,
+        "interestRate": 9.2,
+        "durationMonths": 60,
+        "necessity": 6,
+        "monthlyPayment": 10427.778032942144
+      }
+    ],
+    "alternative_plans": [
+      {
+        "name": "Home Loan",
+        "amount": 5000000,
+        "interestRate": 8.5,
+        "durationMonths": 240,
+        "necessity": 8,
+        "monthlyPayment": 43391.161668276705
+      }
+    ],
+    "recommendation": "Based on your financial data, here are the recommended EMI plans that fit your budget and criteria."
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development.",
+      "Review high priority expenses carefully before making cuts."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": [
+      {
+        "header": "1. Budget Analysis",
+        "body": "Monthly Income: ₹100,000.00
+Total Expenses (Groceries + Rent): ₹18,000.00
+Total EMI Payments (Home Loan + Car Loan): ₹53,818.94
+Remaining Income after Expenses and EMIs: ₹28,181.06
+
+The budget shows a positive cash flow, but a significant portion of the income is allocated to EMIs. Further analysis is needed to determine if there's room for improvement in other spending areas to maximize savings and investments."
+      },
+      {
+        "header": "2. Expense Optimization Suggestions",
+        "body": "- **Food (Groceries):** Evaluate grocery spending to identify areas for potential savings. Consider meal planning, bulk buying (where appropriate), and reducing food waste.
+- **Housing (Rent):** If feasible, explore options for more affordable housing in the long term.
+- **Miscellaneous Spending:** The bank statement reveals several 'UPI Transfer' and 'NEFT Transfer' transactions. Track and categorize these expenses to identify areas where spending can be reduced or eliminated.
+- **Negotiate:** Attempt to renegotiate interest rates on existing loans, or explore balance transfer options to potentially lower monthly payments."
+      },
+      {
+        "header": "3. Investment Recommendations",
+        "body": "With ₹28,181.06 available after expenses and EMIs, consider these investment options:
+- **High-Yield Savings Account/Liquid Funds:** Allocate a portion for easy access and short-term goals.
+- **Mutual Funds (SIP):** Invest in diversified equity mutual funds through Systematic Investment Plans (SIP) for long-term wealth creation. Consider index funds or ETFs for lower expense ratios.
+- **Debt Funds:** Allocate a portion to debt funds for stability and relatively lower risk compared to equity.
+- **Tax-Saving Investments:** Explore tax-saving investments like ELSS mutual funds (Equity Linked Savings Scheme) or PPF (Public Provident Fund) to reduce tax liability."
+      },
+      {
+        "header": "4. Emergency Fund Advice",
+        "body": "It's crucial to build an emergency fund to cover 3-6 months of living expenses. Given the current expense and EMI load, aim for a fund of ₹161,456.82 - ₹322,913.64. Prioritize building this fund before aggressive investing. The current closing balance of ₹2607.02 indicates a critical need to establish this fund urgently. The fluctuating balance suggests irregular spending patterns that require careful monitoring and control."
+      },
+      {
+        "header": "5. Long-Term Financial Planning",
+        "body": "- **Retirement Planning:** Start planning for retirement early. Consider investing in a mix of equity and debt instruments based on your risk tolerance and time horizon.
+- **Goal-Based Investing:** Define long-term financial goals (e.g., buying a house, children's education) and create specific investment plans to achieve them.
+- **Insurance:** Ensure adequate insurance coverage, including health insurance and life insurance, to protect against unforeseen events."
+      },
+      {
+        "header": "6. Transaction Pattern Analysis",
+        "body": "The bank statement indicates frequent 'Salary Credit' transactions, suggesting multiple income sources or fragmented salary payments. This requires clarification.
+- There are also recurring 'UPI Transfer' and 'NEFT Transfer' transactions, which need to be categorized to understand where the money is going.
+- A significant ATM withdrawal of ₹4961.58 indicates a potential reliance on cash, which is difficult to track and manage. Promote digital payments where possible."
+      },
+      {
+        "header": "7. Spending Behavior Insights",
+        "body": "The fluctuating bank balance and frequent transactions suggest a lack of structured budgeting and spending habits. The closing balance of ₹2607.02 raises concerns about financial discipline. 
+- Need for meticulous tracking of expenditure is highly recommended. Analyze spending patterns to identify areas where expenses can be reduced.
+- Implement a budgeting tool or app to monitor income and expenses effectively."
+      },
+      {
+        "header": "8. Cash Flow Optimization",
+        "body": "- **Consolidate Debt:** Explore options for consolidating high-interest debt, such as the car loan, to potentially lower monthly payments and interest costs.
+- **Automate Savings:** Set up automatic transfers from your salary account to your savings and investment accounts to ensure consistent savings.
+- **Reduce Discretionary Spending:** Identify and reduce unnecessary spending on non-essential items to increase the amount available for savings and investments."
+      },
+      {
+        "header": "9. Banking Product Recommendations",
+        "body": "- **High-Yield Savings Account:** Consider switching to a high-yield savings account or liquid mutual fund to earn a higher return on your emergency fund.
+- **Credit Card with Rewards:** If you're disciplined with credit card usage, consider using a credit card with rewards or cashback for everyday expenses, but pay the balance in full each month to avoid interest charges.
+- **Bill Payment Automation:** Utilize the bank's bill payment automation feature to ensure timely payments and avoid late fees."
+      }
+    ],
+    "timestamp": "2025-06-08 00:11:18"
+  },
+  "bank_statement": {
+    "bank": "HDFC Bank Ltd.",
+    "account_info": {
+      "customer_name": "Mr. Aditya Sharma",
+      "account_number": "XXXXXXXX5351",
+      "account_type": "Savings Account",
+      "statement_period": "01-May-2025 to 31-May-2025",
+      "opening_balance": 26742,
+      "closing_balance": 2607.02
+    },
+    "transactions": [
+      {
+        "date": "04-May-2025",
+        "particulars": "Salary Credit",
+        "cheque_no": "161636",
+        "debit": 0,
+        "credit": 2203.82,
+        "balance": 28945.82
+      },
+      {
+        "date": "05-May-2025",
+        "particulars": "NEFT Transfer",
+        "cheque_no": "",
+        "debit": 5220.65,
+        "credit": 0,
+        "balance": 23725.17
+      },
+      {
+        "date": "08-May-2025",
+        "particulars": "Salary Credit",
+        "cheque_no": "",
+        "debit": 3251.32,
+        "credit": 0,
+        "balance": 20473.85
+      },
+      {
+        "date": "09-May-2025",
+        "particulars": "Salary Credit",
+        "cheque_no": "",
+        "debit": 8504.78,
+        "credit": 0,
+        "balance": 11969.07
+      },
+      {
+        "date": "10-May-2025",
+        "particulars": "Salary Credit",
+        "cheque_no": "",
+        "debit": 0,
+        "credit": 7523.11,
+        "balance": 19492.18
+      },
+      {
+        "date": "11-May-2025",
+        "particulars": "UPI Transfer",
+        "cheque_no": "",
+        "debit": 0,
+        "credit": 9874.34,
+        "balance": 29366.52
+      },
+      {
+        "date": "12-May-2025",
+        "particulars": "ATM Withdrawal",
+        "cheque_no": "",
+        "debit": 4961.58,
+        "credit": 0,
+        "balance": 24404.94
+      },
+      {
+        "date": "13-May-2025",
+        "particulars": "NEFT Transfer",
+        "cheque_no": "",
+        "debit": 2550.75,
+        "credit": 0,
+        "balance": 21854.19
+      },
+      {
+        "date": "14-May-2025",
+        "particulars": "Salary Credit",
+        "cheque_no": "",
+        "debit": 9500.39,
+        "credit": 0,
+        "balance": 12353.8
+      },
+      {
+        "date": "17-May-2025",
+        "particulars": "UPI Transfer",
+        "cheque_no": "",
+        "debit": 9746.78,
+        "credit": 0,
+        "balance": 2607.02
+      }
+    ]
+  }
+}

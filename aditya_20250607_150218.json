@@ -1,0 +1,217 @@
+{
+  "user_name": "Aditya",
+  "salary": 100000.0,
+  "optimized_expenses": [
+    {
+      "name": "rent",
+      "category": "Housing",
+      "amount": 13500.0,
+      "priority": "High",
+      "isLocked": false
+    }
+  ],
+  "emi_recommendation": {
+    "best_plan": {
+      "name": "Car loan",
+      "loanAmount": 200000,
+      "interestRate": 8,
+      "durationMonths": 12,
+      "necessity": 7,
+      "monthlyPayment": 18000
+    },
+    "alternative_plans": []
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development.",
+      "Review high priority expenses carefully before making cuts."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": "AI response not in expected JSON format. Raw text: ```json
+[
+  {
+    \"header\": \"1. Budget Analysis\",
+    \"body\": \"Monthly Income: ₹100,000\
+\
+Fixed Expenses:\
+- Rent: ₹13,500\
+- Car Loan EMI: ₹18,000\
+\
+Total Fixed Expenses: ₹31,500\
+\
+Remaining Income: ₹68,500 (This needs further allocation for savings, investments, and discretionary spending.)\
+\
+Significant portion of income is available for Savings, Investment, and Discretionary Spending. Detailed analysis and allocation required.\"
+  },
+  {
+    \"header\": \"2. Expense Optimization Suggestions\",
+    \"body\": \"1. **Review 'Online Purchases'**: Analyze the nature of 'Online Purchases' from the bank statement (₹9607.84 and ₹3118.42). Identify non-essential spending and consider reducing it.\
+2. **Evaluate 'UPI Transfer'**: The UPI transfer of ₹4115.75 requires closer examination. Understand the purpose and explore if alternative, cheaper methods exist.\
+3. **Assess 'NEFT Transfer'**: Determine the necessity and frequency of the ₹1793.96 NEFT transfer. Are there cheaper or automated alternatives?\
+4. **Look for better offers**: Review your current rent and explore lower cost opportunities.\"
+  },
+  {
+    \"header\": \"3. Investment Recommendations\",
+    \"body\": \"With ₹68,500 available after fixed expenses, consider these investment options:\
+\
+1. **Mutual Funds (SIP)**: Allocate a portion (e.g., ₹20,000) to Systematic Investment Plans (SIPs) in diversified equity mutual funds for long-term growth. Consider a mix of large-cap, mid-cap, and small-cap funds based on risk tolerance.\
+2. **Debt Funds/Bonds**: Invest in debt funds or bonds to balance the portfolio and provide stability. Allocation depends on risk aversion (e.g., ₹10,000).\
+3. **Consider Fixed Deposits**: A small portion could be allocated to fixed deposits (FD) for a safe investment (e.g. ₹5,000).\
+4. **Gold Bonds**: Invest in Sovereign Gold Bonds for a hedge against inflation. Check if your existing portfolio has significant allocations and align accordingly. \
+*Disclaimer: Consult a financial advisor for personalized investment advice.*\"
+  },
+  {
+    \"header\": \"4. Emergency Fund Advice\",
+    \"body\": \"Current Closing Balance: ₹3763.82 (Savings Account)\
+\
+Recommendation: Build an emergency fund equal to 3-6 months of living expenses.\
+\
+Calculation: Assuming monthly expenses are around ₹50,000, aim for an emergency fund of ₹150,000 - ₹300,000.\
+\
+Action: Prioritize building the emergency fund. Allocate a significant portion of the remaining income (e.g., ₹20,000 per month) until the target is reached.\
+Consider a separate high-yield savings account or a liquid mutual fund for easier access during emergencies.\"
+  },
+  {
+    \"header\": \"5. Long-Term Financial Planning\",
+    \"body\": \"1. **Retirement Planning**: Start planning for retirement early. Consider options like the National Pension System (NPS) or investing in long-term equity funds.\
+2. **Financial Goals**: Define clear financial goals (e.g., buying a house, children's education, early retirement). Set timelines and allocate investments accordingly.\
+3. **Insurance**: Ensure adequate health and life insurance coverage to protect against unforeseen events.\
+4. **Tax Planning**: Optimize tax planning to minimize tax liability. Explore tax-saving investment options like ELSS funds or PPF.\
+5. **Review Regularly**: Review your financial plan annually or semi-annually and make adjustments as needed.\"
+  },
+  {
+    \"header\": \"6. Transaction Pattern Analysis\",
+    \"body\": \"1. **Frequent Online Purchases**: Significant online purchase activity detected. Need to understand spend category wise.\
+2. **Debit Transactions**: High debit transactions require a detailed breakup category wise and need a budget around them.\
+3. **Inconsistent Savings**: A low closing balance suggests inconsistent saving habits. Revisit your saving plans to make sure to hit savings goals.\
+4. **Salary Credits**: Identified consistent salary credits.\
+5. **Interest Credits**: Identified inconsistent interest credits.\
+\"
+  },
+  {
+    \"header\": \"7. Spending Behavior Insights\",
+    \"body\": \"1. **Impulse Buying**: Potential for impulse buying based on online purchase patterns. Consider creating a 'waiting period' before making non-essential purchases.\
+2. **Lack of Budgeting**: Possible lack of a detailed budget leading to uncontrolled spending. Create a budget and track expenses diligently.\
+3. **Cash Dependence**: ATM withdrawals indicate a reliance on cash. Explore digital payment options for better tracking and potential rewards/discounts.\
+4. **Needs vs Wants**: Carefully distinguish between needs and wants before spending. Prioritize essential expenses and control discretionary spending.\"
+  },
+  {
+    \"header\": \"8. Cash Flow Optimization\",
+    \"body\": \"1. **Automate Savings**: Set up automatic transfers to savings and investment accounts immediately after receiving salary.\
+2. **Consolidate Debt**: If you have other debts with higher interest rates, consider consolidating them into a single loan with a lower rate.\
+3. **Negotiate Bills**: Negotiate with service providers (e.g., internet, phone) to reduce monthly bills.\
+4. **Track Expenses**: Use a budgeting app or spreadsheet to track income and expenses. Identify areas where you can cut back.\
+5. **Reduce ATM Withdrawal**: Reduce cash withdrawals and opt for digital payment methods.\"
+  },
+  {
+    \"header\": \"9. Banking Product Recommendations\",
+    \"body\": \"1. **High-Yield Savings Account**: Consider opening a high-yield savings account with a competitive interest rate to grow your emergency fund faster.\
+2. **Credit Card with Rewards**: If you are disciplined with credit card usage, consider using one with rewards or cashback on purchases.\
+3. **Automated Bill Payments**: Set up automated bill payments to avoid late fees and improve your credit score.\
+4. **Investment Account**: Open a Demat account or investment account for managing investments seamlessly.\
+5. **Review Current Account**: Assess current banking products and consider products that better suit the spending behavior insights.\"
+  }
+]
+```",
+    "timestamp": "2025-06-07 15:02:09",
+    "error": "JSON parsing failed"
+  },
+  "bank_statement": {
+    "account_info": {
+      "account_number": "XXXXXXXX2489",
+      "account_type": "Savings Account",
+      "closing_balance": 3763.82,
+      "customer_name": "Mr. Aditya Sharma",
+      "opening_balance": 35559,
+      "statement_period": "01-May-2025 to 31-May-2025"
+    },
+    "bank": "HDFC Bank Ltd.",
+    "transactions": [
+      {
+        "balance": 32130.87,
+        "cheque_no": "",
+        "credit": 0,
+        "date": "03-May-2025",
+        "debit": 3428.13,
+        "particulars": "Interest Credit"
+      },
+      {
+        "balance": 23822.22,
+        "cheque_no": "959708",
+        "credit": 0,
+        "date": "04-May-2025",
+        "debit": 8308.65,
+        "particulars": "Salary Credit"
+      },
+      {
+        "balance": 14214.38,
+        "cheque_no": "",
+        "credit": 0,
+        "date": "05-May-2025",
+        "debit": 9607.84,
+        "particulars": "Online Purchase"
+      },
+      {
+        "balance": 13492.45,
+        "cheque_no": "366549",
+        "credit": 0,
+        "date": "08-May-2025",
+        "debit": 721.93,
+        "particulars": "Interest Credit"
+      },
+      {
+        "balance": 17704.33,
+        "cheque_no": "",
+        "credit": 4211.88,
+        "date": "09-May-2025",
+        "debit": 0,
+        "particulars": "NEFT Transfer"
+      },
+      {
+        "balance": 20822.75,
+        "cheque_no": "",
+        "credit": 3118.42,
+        "date": "12-May-2025",
+        "debit": 0,
+        "particulars": "Online Purchase"
+      },
+      {
+        "balance": 18764.55,
+        "cheque_no": "318074",
+        "credit": 0,
+        "date": "14-May-2025",
+        "debit": 2058.2,
+        "particulars": "ATM Withdrawal"
+      },
+      {
+        "balance": 16970.59,
+        "cheque_no": "",
+        "credit": 0,
+        "date": "15-May-2025",
+        "debit": 1793.96,
+        "particulars": "NEFT Transfer"
+      },
+      {
+        "balance": 12854.84,
+        "cheque_no": "730821",
+        "credit": 0,
+        "date": "17-May-2025",
+        "debit": 4115.75,
+        "particulars": "UPI Transfer"
+      },
+      {
+        "balance": 3763.82,
+        "cheque_no": "875066",
+        "credit": 0,
+        "date": "18-May-2025",
+        "debit": 9091.02,
+        "particulars": "Interest Credit"
+      }
+    ]
+  }
+}

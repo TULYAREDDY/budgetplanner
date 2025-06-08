@@ -1,0 +1,90 @@
+{
+  "user_name": "anirudh",
+  "salary": 100000.0,
+  "optimized_expenses": [
+    {
+      "category": "Food",
+      "name": "Groceries",
+      "amount": 4500.0,
+      "priority": "High"
+    },
+    {
+      "category": "Housing",
+      "name": "Rent",
+      "amount": 13500.0,
+      "priority": "High"
+    }
+  ],
+  "emi_recommendation": {
+    "best_plan": {
+      "name": "Car Loan",
+      "amount": 500000,
+      "interestRate": 9.2,
+      "durationMonths": 60,
+      "necessity": 6,
+      "monthlyPayment": 10427.778032942144
+    },
+    "alternative_plans": [
+      {
+        "name": "Home Loan",
+        "amount": 5000000,
+        "interestRate": 8.5,
+        "durationMonths": 240,
+        "necessity": 8,
+        "monthlyPayment": 43391.161668276705
+      }
+    ]
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development.",
+      "Review high priority expenses carefully before making cuts."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": [
+      {
+        "header": "1. Budget Analysis",
+        "body": "Your monthly income is ₹100,000. Current expenses (Groceries: ₹4,500, Rent: ₹13,500) and EMI payments (Home Loan: ₹43,391.16, Car Loan: ₹10,427.78) total ₹71,818.94. This leaves you with ₹28,181.06 in available income each month. A detailed budget outlining allocation for savings, investments, and discretionary spending is recommended."
+      },
+      {
+        "header": "2. Expense Optimization Suggestions",
+        "body": "While rent and groceries are considered high-priority, explore opportunities to reduce costs. For groceries, consider meal planning, buying in bulk (if applicable), and comparing prices. For rent, evaluate if a smaller or more affordable dwelling is feasible, especially if remote work is an option. Reviewing and potentially refinancing your Car Loan could lower monthly payments."
+      },
+      {
+        "header": "3. Investment Recommendations",
+        "body": "With ₹28,181.06 available after essential expenses and EMIs, allocate a portion towards investments. Consider diversifying across asset classes. Begin with index funds or ETFs for broad market exposure. As your risk tolerance and knowledge increase, explore other options like mutual funds, stocks (after thorough research), or real estate (longer-term investment). Prioritize tax-advantaged accounts if available."
+      },
+      {
+        "header": "4. Emergency Fund Advice",
+        "body": "An emergency fund is crucial for unexpected expenses. Aim to accumulate 3-6 months' worth of essential living expenses (rent, utilities, food, loan payments). Given your current expenses, this would be roughly ₹215,456.82 - ₹430,913.64. Prioritize building this fund in a high-yield savings account or a money market fund for easy access."
+      },
+      {
+        "header": "5. Long-Term Financial Planning",
+        "body": "Beyond the emergency fund, develop a long-term financial plan that includes retirement savings, goals for larger purchases (e.g., property, business), and potentially funding education for dependents. Consider consulting a financial advisor to create a personalized plan based on your goals, risk tolerance, and time horizon."
+      },
+      {
+        "header": "6. Transaction Pattern Analysis",
+        "body": "Analyzing the bank statement will reveal spending habits and transaction patterns.  Categorizing transactions by type (e.g., dining out, entertainment, shopping) will highlight areas where you may be overspending. Use budgeting apps or spreadsheets to track your expenses effectively. Analyzing \"bank_statement_7.json\" will provide more specific and data-driven insights."
+      },
+      {
+        "header": "7. Spending Behavior Insights",
+        "body": "Based on transaction analysis, identify areas of impulsive spending or unnecessary subscriptions. Consider implementing a waiting period before making non-essential purchases. Unsubscribe from unwanted services and track spending against your budget to stay on track. Understanding your emotional triggers for spending can help you make more conscious financial decisions."
+      },
+      {
+        "header": "8. Cash Flow Optimization",
+        "body": "Optimize cash flow by automating savings and investment contributions. Schedule transfers to your emergency fund and investment accounts immediately after receiving your salary. This 'pay yourself first' approach ensures consistent saving and investment. Also, review your bills and subscriptions regularly to identify opportunities to negotiate lower rates or cancel unused services."
+      },
+      {
+        "header": "9. Banking Product Recommendations",
+        "body": "Review your current banking products (savings accounts, credit cards) to ensure they align with your financial goals. Consider high-yield savings accounts for your emergency fund and investment funds. Evaluate credit card rewards programs and choose cards that offer benefits relevant to your spending habits (e.g., travel rewards, cashback). Look for accounts with minimal fees and convenient access."
+      }
+    ],
+    "timestamp": "2025-06-07 21:39:20"
+  },
+  "bank_statement": "bank_statement_7.json"
+}

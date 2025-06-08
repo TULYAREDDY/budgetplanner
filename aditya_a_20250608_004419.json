@@ -1,0 +1,239 @@
+{
+  "user_name": "Aditya A",
+  "salary": 150000.0,
+  "optimized_expenses": [
+    {
+      "category": "Food",
+      "name": "Groceries",
+      "amount": 4500.0,
+      "priority": "High"
+    },
+    {
+      "category": "Housing",
+      "name": "Rent",
+      "amount": 13500.0,
+      "priority": "High"
+    },
+    {
+      "category": "Healthcare",
+      "name": "Treatment",
+      "amount": 6300.0,
+      "priority": "High"
+    },
+    {
+      "category": "Debt",
+      "name": "From friend",
+      "amount": 1200.0,
+      "priority": "Medium"
+    },
+    {
+      "category": "Personal Care",
+      "name": "Badminton",
+      "amount": 1800.0,
+      "priority": "Medium"
+    }
+  ],
+  "emi_recommendation": {
+    "selected_plans": [
+      {
+        "name": "Tutuion Fee",
+        "amount": 70000,
+        "interestRate": 2,
+        "durationMonths": 36,
+        "necessity": 10,
+        "monthlyPayment": 2004.9805112719034
+      },
+      {
+        "name": "Car Loan",
+        "amount": 500000,
+        "interestRate": 9.2,
+        "durationMonths": 60,
+        "necessity": 6,
+        "monthlyPayment": 10427.778032942144
+      },
+      {
+        "name": "Home Loan",
+        "amount": 5000000,
+        "interestRate": 8.5,
+        "durationMonths": 240,
+        "necessity": 8,
+        "monthlyPayment": 43391.161668276705
+      }
+    ],
+    "alternative_plans": [],
+    "recommendation": "Based on your financial data, here are the recommended EMI plans that fit your budget and criteria."
+  },
+  "advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development.",
+      "Review high priority expenses carefully before making cuts."
+    ]
+  },
+  "smart_model_summary": {
+    "detailed_analysis": [
+      {
+        "header": "1. Budget Analysis",
+        "body": "Monthly Income: ₹150,000.00
+Total Expenses (Current): ₹30,300.00
+Total EMI Payments: ₹55,823.92
+
+Total Spending: ₹86,123.92
+
+Available Surplus: ₹63,876.08
+
+This indicates a healthy surplus, however, we need to further analyze if your expenses are optimized.  It is vital to ensure you are saving enough for your future goals and emergency."
+      },
+      {
+        "header": "2. Expense Optimization Suggestions",
+        "body": "- **Badminton (₹1,800):** Explore cheaper alternatives or reduce frequency.
+- **Evaluate Priorities:** Re-assess 'Medium' priority expenses to determine if they can be reduced or eliminated.
+- **Compare Prices:** Always compare prices for groceries and other essential items before purchasing. Bulk buying when appropriate can save money.
+- **Reduce Food Waste:** Plan meals and utilize leftovers to minimize grocery spending.
+- **Housing:** Rent is the second highest, so explore possible options if suitable."
+      },
+      {
+        "header": "3. Investment Recommendations",
+        "body": "With a surplus of ₹63,876.08, consider diversifying investments.
+
+- **High-Risk (10%):** Invest in Stocks (carefully chosen based on research and risk tolerance).
+- **Medium-Risk (30%):** Consider Mutual Funds (SIP route for disciplined investing).
+- **Low-Risk (60%):** Invest in Fixed Deposits, Government Bonds, or other secure instruments.
+
+Consult a financial advisor for personalized investment strategies aligned with your risk profile and financial goals."
+      },
+      {
+        "header": "4. Emergency Fund Advice",
+        "body": "Aim for 6-12 months of essential living expenses in an easily accessible, liquid account (e.g., savings account or money market fund).
+
+Based on your current expenses (₹30,300 + ₹55,823.92 = ₹86,123.92), aim for an emergency fund of approximately ₹516,743.52 - ₹1,033,487.04.
+
+Prioritize building this fund before aggressive investing."
+      },
+      {
+        "header": "5. Long-Term Financial Planning",
+        "body": "Define your long-term financial goals (e.g., retirement, child's education, travel). Determine the estimated cost for each goal and the timeframe.
+
+Based on these goals, create a detailed investment plan, regularly review your progress, and adjust your strategy as needed.  Consider consulting a financial planner for this step."
+      },
+      {
+        "header": "6. Transaction Pattern Analysis",
+        "body": "Based on your bank statement, most transactions are for online purchases. It is good that you are using online payment methods. However, these purchases should be tracked for spending habits. Consider using budgeting apps to monitor your income and expenditure to identify areas of improvement. Make sure your recurring transactions and high payments are budgeted beforehand."
+      },
+      {
+        "header": "7. Spending Behavior Insights",
+        "body": "The bank statement indicates a tendency to spend on online purchases. Identify the categories where most online spending occurs. Assess whether these are needs or wants and prioritize needs. Try to reduce your spending on non-essential items."
+      },
+      {
+        "header": "8. Cash Flow Optimization",
+        "body": "Optimize your cash flow by automating savings and investments immediately after receiving your salary. This 'pay yourself first' approach ensures consistent savings.
+
+Review your expenses monthly and identify areas where you can cut back. Negotiate better deals on recurring expenses (e.g., insurance, utilities). Ensure EMI plans are well under control and don't disrupt your budget."
+      },
+      {
+        "header": "9. Banking Product Recommendations",
+        "body": "- **High-Yield Savings Account:** Explore high-yield savings accounts to maximize returns on your emergency fund.
+- **Credit Card with Rewards:** If you use credit cards, opt for one that offers rewards or cashback on your spending.  Pay off the balance in full each month to avoid interest charges.
+- **Investment Account:** Open a Demat and Trading account for equity investments.
+- **Digital Wallet:** Consider using digital wallets offering cashback and discounts for online and offline transactions."
+      }
+    ],
+    "timestamp": "2025-06-08 00:44:11"
+  },
+  "bank_statement": {
+    "bank": "HDFC Bank Ltd.",
+    "account_info": {
+      "customer_name": "Mr. Aditya Sharma",
+      "account_number": "XXXXXXXX5981",
+      "account_type": "Savings Account",
+      "statement_period": "01-May-2025 to 31-May-2025",
+      "opening_balance": 33015,
+      "closing_balance": 37783.14
+    },
+    "transactions": [
+      {
+        "date": "04-May-2025",
+        "particulars": "NEFT Transfer",
+        "cheque_no": "",
+        "debit": 5104.33,
+        "credit": 0,
+        "balance": 27910.67
+      },
+      {
+        "date": "05-May-2025",
+        "particulars": "Online Purchase",
+        "cheque_no": "",
+        "debit": 0,
+        "credit": 4907.35,
+        "balance": 32818.02
+      },
+      {
+        "date": "07-May-2025",
+        "particulars": "UPI Transfer",
+        "cheque_no": "",
+        "debit": 0,
+        "credit": 2026.24,
+        "balance": 34844.26
+      },
+      {
+        "date": "08-May-2025",
+        "particulars": "ATM Withdrawal",
+        "cheque_no": "",
+        "debit": 0,
+        "credit": 970.09,
+        "balance": 35814.35
+      },
+      {
+        "date": "10-May-2025",
+        "particulars": "Online Purchase",
+        "cheque_no": "",
+        "debit": 0,
+        "credit": 8440.14,
+        "balance": 44254.49
+      },
+      {
+        "date": "12-May-2025",
+        "particulars": "UPI Transfer",
+        "cheque_no": "",
+        "debit": 1194.48,
+        "credit": 0,
+        "balance": 43060.01
+      },
+      {
+        "date": "14-May-2025",
+        "particulars": "UPI Transfer",
+        "cheque_no": "",
+        "debit": 0,
+        "credit": 4012.25,
+        "balance": 47072.26
+      },
+      {
+        "date": "17-May-2025",
+        "particulars": "Online Purchase",
+        "cheque_no": "",
+        "debit": 9866.53,
+        "credit": 0,
+        "balance": 37205.73
+      },
+      {
+        "date": "20-May-2025",
+        "particulars": "Online Purchase",
+        "cheque_no": "838289",
+        "debit": 0,
+        "credit": 4193.63,
+        "balance": 41399.36
+      },
+      {
+        "date": "22-May-2025",
+        "particulars": "Interest Credit",
+        "cheque_no": "",
+        "debit": 3616.22,
+        "credit": 0,
+        "balance": 37783.14
+      }
+    ]
+  }
+}

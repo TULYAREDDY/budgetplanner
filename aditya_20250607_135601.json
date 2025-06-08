@@ -1,0 +1,125 @@
+{
+  "user_info": {
+    "name": "aditya",
+    "monthly_salary": 75000.0,
+    "analysis_date": "2025-06-07 13:56:01"
+  },
+  "expense_analysis": {
+    "by_category": {
+      "Housing": 10000.0,
+      "Transportation": 2000.0,
+      "Food": 5000.0
+    },
+    "total_expenses": 17000.0,
+    "net_savings": 58000.0,
+    "detailed_expenses": [
+      {
+        "name": "rent",
+        "category": "Housing",
+        "amount": 10000.0,
+        "priority": "High",
+        "isLocked": true
+      },
+      {
+        "name": "fuel",
+        "category": "Transportation",
+        "amount": 2000.0,
+        "priority": "High",
+        "isLocked": false
+      },
+      {
+        "name": "food",
+        "category": "Food",
+        "amount": 5000.0,
+        "priority": "Medium",
+        "isLocked": false
+      }
+    ]
+  },
+  "emi_recommendations": {
+    "best_plan": {
+      "name": "car loan",
+      "loanAmount": 200000.0,
+      "interestRate": 8.0,
+      "durationMonths": 12,
+      "necessity": 7,
+      "monthlyPayment": 18000.0
+    },
+    "alternative_plans": []
+  },
+  "financial_advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development.",
+      "Review high priority expenses carefully before making cuts."
+    ]
+  },
+  "smart_model_summary": {
+    "formatted_analysis": "Okay, let's analyze this financial situation and provide actionable advice.\
+\
+📊 BUDGET ANALYSIS\
+--------------------------------------------------\
+**1. Budget Analysis**\
+*   **Income:** ₹75,000.00\
+*   **Expenses:**\
+    *   Rent: ₹10,000.00\
+    *   Fuel: ₹2,000.00\
+    *   Food: ₹5,000.00\
+    *   Car Loan EMI: ₹18,000.00\
+*   **Total Expenses:** ₹35,000.00\
+*   **Remaining:** ₹40,000.00\
+**Analysis:** You have a good amount remaining after essential expenses and the car loan. The crucial next step is to allocate this surplus strategically.\
+\
+💹 EXPENSE OPTIMIZATION\
+--------------------------------------------------\
+**2. Expense Optimization Suggestions**\
+*   **Fuel:**\
+    *   **Action:** Explore carpooling, public transport, or cycling for shorter distances to reduce fuel consumption. Aim to reduce by 10-20%.\
+*   **Food:**\
+    *   **Action:** Plan meals, cook at home more often, and reduce eating out. Aim for a 10% reduction by planning your meals.\
+*   **Overall:**\
+    *   **Action:** Track ALL expenses for 1-2 months to identify hidden spending. Use a budgeting app or spreadsheet.\
+\
+📈 INVESTMENT RECOMMENDATIONS\
+--------------------------------------------------\
+**3. Investment Recommendations**\
+\
+📈 INVESTMENT RECOMMENDATIONS\
+--------------------------------------------------\
+*   **Prioritize Debt Reduction:** Consider increasing payments on the car loan (if possible without penalty) to reduce interest paid and free up cash flow sooner.\
+*   **Mutual Funds (SIP):**\
+    *   **Action:** Start a Systematic Investment Plan (SIP) in a diversified equity mutual fund. Allocate ₹10,000 per month. Look for funds with a good track record (5+ years) and low expense ratios.\
+*   **Fixed Income (Debt Fund/FD):**\
+    *   **Action:** Allocate ₹5,000 per month to a debt fund or Fixed Deposit (FD) for stability and less risk. Compare interest rates and choose a reputable provider.\
+*   **Direct Equity(Optional):**\
+    *   **Action:** If you understand stocks, allocate a small portion (₹2,000) for investment in individual stocks only after sufficient research.\
+\
+🛡️ EMERGENCY FUND ADVICE\
+--------------------------------------------------\
+**4. Emergency Fund Advice**\
+*   **Target:** Aim for 3-6 months of essential living expenses (Rent, Food, Utilities, Loan EMIs).  Based on your current situation, this would be ₹105,000 - ₹210,000.\
+*   **Location:** Keep the emergency fund in a high-yield savings account, liquid mutual fund, or sweep-in FD for easy access.\
+*   **Action:** Allocate ₹10,000 per month to building this fund until you reach your target.\
+\
+🎯 LONG-TERM PLANNING\
+--------------------------------------------------\
+**5. Long-Term Financial Planning**\
+*   **Goals:** Define clear financial goals (e.g., retirement, buying a home, children's education).\
+*   **Retirement:**\
+    *   **Action:** Start contributing to a retirement fund (e.g., NPS, PPF) early and consistently. Increase contributions over time as your income grows.\
+*   **Insurance:**\
+    *   **Action:** Ensure you have adequate health and term life insurance coverage. Review your coverage annually.\
+*   **Home Loan (Future):**\
+    *   **Action:** After building a sufficient emergency fund and starting investments, you can plan for a down payment for a home loan. Start a separate investment earmarked for this purpose.\
+**Important Considerations:**\
+*   **Risk Tolerance:**  The investment recommendations are general. Assess your risk tolerance before investing. Consult a financial advisor for personalized advice.\
+*   **Review Regularly:** Review your budget, expenses, investments, and financial goals at least once a year and adjust your plan as needed.\
+*   **Financial Literacy:** Continuously improve your financial knowledge by reading books, articles, and taking online courses.\
+By following these steps, you can gain better control of your finances, build wealth, and achieve your long-term financial goals. Good luck!\
+",
+    "timestamp": "2025-06-07 13:55:53"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "user_info": {
+    "name": "aditya",
+    "monthly_salary": 100000.0,
+    "analysis_date": "2025-06-07 13:13:00"
+  },
+  "expense_analysis": {
+    "by_category": {
+      "Housing": 15000.0,
+      "Transportation": 2000.0,
+      "Personal Care": 18000.0
+    },
+    "total_expenses": 35000.0,
+    "net_savings": 65000.0,
+    "detailed_expenses": [
+      {
+        "name": "rent",
+        "category": "Housing",
+        "amount": 15000.0,
+        "priority": "High",
+        "isLocked": true
+      },
+      {
+        "name": "fuel",
+        "category": "Transportation",
+        "amount": 2000.0,
+        "priority": "Medium",
+        "isLocked": false
+      },
+      {
+        "name": "project",
+        "category": "Personal Care",
+        "amount": 18000.0,
+        "priority": "High",
+        "isLocked": false
+      }
+    ]
+  },
+  "emi_recommendations": {
+    "best_plan": null,
+    "alternative_plans": [
+      {
+        "name": "project fund",
+        "loanAmount": 700000.0,
+        "interestRate": 7.5,
+        "durationMonths": 12,
+        "necessity": 8,
+        "monthlyPayment": 62708.333333333336
+      }
+    ]
+  },
+  "financial_advice": {
+    "alerts": [],
+    "tips": [
+      "Try the 50/30/20 rule: 50% for needs, 30% for wants, and 20% for savings.",
+      "Consider automating your savings by setting up automatic transfers.",
+      "Review your subscriptions and cancel those you don't use regularly.",
+      "Look for ways to increase your income through side gigs or skill development.",
+      "Review high priority expenses carefully before making cuts."
+    ]
+  },
+  "smart_model_summary": {
+    "analysis": "Okay, here's an analysis of your financial situation with specific and actionable advice:\n\n**1. Budget Analysis**\n\n*   **Income:** ₹100,000.00/month\n*   **Expenses:**\n    *   Rent: ₹15,000.00\n    *   Fuel: ₹2,000.00\n    *   Project: ₹18,000.00\n    *   EMI (Project Fund): ₹62,708.33\n    *   **Total Expenses:** ₹97,708.33\n*   **Surplus/Deficit:** ₹2,291.67\n\n**Conclusion:** Your budget is extremely tight. With only a small surplus, you are vulnerable to unexpected expenses and have little room for savings or investment. The project fund EMI dominates your expenses.\n\n**2. Expense Optimization Suggestions**\n\n*   **Fuel:** Explore alternatives like public transport, carpooling, or biking for shorter distances to reduce fuel consumption. Aim for a 10-20% reduction. (Target: Reduce by ₹200-₹400)\n*   **Project (Personal Care):** Carefully examine this expense. What constitutes \"personal care\"?  Identify and cut non-essential items. Set a strict budget. (Target: Reduce by 10-20%, ₹1800-₹3600. Consider DIY options or cheaper alternatives.)\n*   **Negotiate (If Possible):** While rent is locked, try negotiating a lower interest rate on your EMI with the lender or explore balance transfer options with other lenders.\n*   **Eliminate/Postpone:** Postpone any unnecessary expenses until your budget is more stable.  Subscriptions, entertainment, etc. are good candidates.\n\n**3. Investment Recommendations**\n\nGiven your current tight budget, aggressive investment is NOT recommended. Focus on:\n\n*   **Debt Reduction:** Prioritize paying down the Project Fund EMI faster, if possible. Even small extra payments will save interest and free up cash flow sooner.\n*   **Small, Low-Risk Investments (After Emergency Fund Goal is Met):** After building a safety net, consider recurring investments in low-risk options like index funds, debt funds or Government schemes to diversify your investments portfolio.\n\n**4. Emergency Fund Advice**\n\n*   **Critical Need:** Building an emergency fund is your *highest priority*. Aim for 3-6 months of essential expenses (Rent + Project EMI + Fuel = ₹79,708.33 x 3 = ₹239,125).\n*   **Start Small:**  Put any surplus (₹2,291.67) directly into a high-yield savings account or liquid mutual fund earmarked *solely* for emergencies. Incrementally add to it whenever possible.\n\n**5. Long-Term Financial Planning**\n\n*   **Goal Setting:** Define your long-term financial goals (retirement, home purchase, etc.).  Quantify these goals with specific amounts and timelines.\n*   **Income Enhancement:** Explore opportunities to increase your income through upskilling, side hustles, or a better-paying job.\n*   **Financial Literacy:**  Continuously improve your understanding of personal finance through reading, courses, or consulting a financial advisor. This will empower you to make informed decisions.\n*   **Regular Review:** Revisit your budget, expenses, and investments at least quarterly to ensure you are on track and adjust your strategy as needed.\n",
+    "timestamp": "2025-06-07 13:12:54"
+  }
+}
