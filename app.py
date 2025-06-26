@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session, send_file, make_response
 from logic.greedy_optimizer import greedy_optimizer
 from logic.dp_emi_selector import dp_emi_selector
 from logic.decision_tree_advice import decision_tree_advice
@@ -10,6 +10,10 @@ from datetime import datetime
 import os
 from dotenv import load_dotenv
 import re
+from werkzeug.security import generate_password_hash, check_password_hash
+from functools import wraps
+from calendar import month_name
+import shutil
 
 # Load environment variables
 load_dotenv()
@@ -24,6 +28,45 @@ genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-2.0-flash')
 
 app = Flask(__name__)
+app.secret_key = os.getenv('SECRET_KEY', 'supersecretkey')  # Needed for session management
+
+USERS_FILE = 'users.json'
+USERS_DIR = 'users'
+if not os.path.exists(USERS_DIR):
+    os.makedirs(USERS_DIR)
+
+# Ensure required folders exist at startup
+for folder in ['results', 'data', 'users']:
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
+# Helper to load users
+def load_users():
+    if not os.path.exists(USERS_FILE):
+        return {}
+    with open(USERS_FILE, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+# Helper to save users
+def save_users(users):
+    with open(USERS_FILE, 'w', encoding='utf-8') as f:
+        json.dump(users, f, indent=2)
+
+# Helper to load user profile
+def load_user_profile(username):
+    profile_path = os.path.join(USERS_DIR, username, 'profile.json')
+    if os.path.exists(profile_path):
+        with open(profile_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return None
+
+# Helper to save user profile
+def save_user_profile(username, profile):
+    user_dir = os.path.join(USERS_DIR, username)
+    os.makedirs(user_dir, exist_ok=True)
+    profile_path = os.path.join(user_dir, 'profile.json')
+    with open(profile_path, 'w', encoding='utf-8') as f:
+        json.dump(profile, f, indent=2)
 
 def get_ai_advice(expenses: List[Dict], salary: float, emi_plans: List[Dict], bank_statement: Dict = None) -> Dict:
     """Get AI-powered financial advice using Gemini API."""
@@ -142,35 +185,82 @@ def analyze_expenses_by_category(expenses: List[Dict]) -> Dict:
     return category_totals
 
 def save_results_to_json(results: Dict, user_name: str):
-    """Save results to a JSON file."""
+    """Save results to a JSON file in the results/ directory."""
     safe_filename = "".join(c for c in user_name if c.isalnum() or c in (' ', '-', '_')).strip()
     safe_filename = safe_filename.replace(' ', '_').lower()
-    
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"{safe_filename}_{timestamp}.json"
-    
+    results_dir = "results"
+    if not os.path.exists(results_dir):
+        os.makedirs(results_dir)
+    filepath = os.path.join(results_dir, filename)
     try:
         if 'smart_model_summary' in results and 'formatted_analysis' in results['smart_model_summary']:
             formatted_text = results['smart_model_summary']['formatted_analysis']
             formatted_text = formatted_text.replace('\n', '\\n').replace('"', '\\"')
             results['smart_model_summary']['formatted_analysis'] = formatted_text
-        
-        with open(filename, 'w', encoding='utf-8') as f:
+
+        with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(results, f, indent=2, ensure_ascii=False)
-        
-        with open(filename, 'r', encoding='utf-8') as f:
+
+        with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
-        
+
         content = content.replace('\\n', '\n')
-        
-        with open(filename, 'w', encoding='utf-8') as f:
+
+        with open(filepath, 'w', encoding='utf-8') as f:
             f.write(content)
-            
-        return filename
+
+        return filename  # Return just the filename, not the full path
     except Exception as e:
         return None
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username'].strip()
+        password = request.form['password']
+        action = request.form.get('action')
+        users = load_users()
+        if action == 'register':
+            if username in users:
+                return render_template('login.html', error='Username already exists.')
+            users[username] = {"password": password}
+            save_users(users)
+            # Create user folder and profile
+            profile = {"username": username, "created_at": datetime.now().isoformat()}
+            save_user_profile(username, profile)
+            session['username'] = username
+            return redirect(url_for('index'))
+        # Login
+        if username in users and users[username]['password'] == password:
+            # Ensure user profile exists
+            if not load_user_profile(username):
+                profile = {"username": username, "created_at": datetime.now().isoformat()}
+                save_user_profile(username, profile)
+            session['username'] = username
+            return redirect(url_for('index'))
+        else:
+            return render_template('login.html', error='Invalid username or password.')
+    return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('login'))
+
+# Decorator to require login
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'username' not in session:
+            return redirect(url_for('login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+# Protect index and analyze routes
 @app.route('/')
+@login_required
 def index():
     """Render the main page."""
     # Get list of available bank statements
@@ -179,7 +269,7 @@ def index():
     # Generate a unique version string for cache busting
     current_time_version = datetime.now().timestamp()
     
-    return render_template('index.html', bank_statements=bank_statements, current_time_version=current_time_version)
+    return render_template('index.html', bank_statements=bank_statements, current_time_version=current_time_version, username=session.get('username'))
 
 @app.route('/get_bank_statement/<filename>')
 def get_bank_statement(filename):
@@ -191,11 +281,12 @@ def get_bank_statement(filename):
         return jsonify({'error': str(e)}), 400
 
 @app.route('/analyze', methods=['POST'])
+@login_required
 def analyze():
     """Analyze financial data and return results."""
     try:
         data = request.json
-        user_name = data.get('user_name', 'user_' + datetime.now().strftime("%Y%m%d_%H%M%S"))
+        user_name = session.get('username', data.get('user_name', 'user_' + datetime.now().strftime("%Y%m%d_%H%M%S")))
         salary = float(data.get('salary', 0))
         expenses = data.get('expenses', [])
         emi_plans = data.get('emi_plans', [])
@@ -217,6 +308,12 @@ def analyze():
         # Get AI advice
         ai_advice = get_ai_advice(optimized_expenses, salary, emi_plans, bank_statement)
 
+        # Calculate balance and savings
+        total_fixed = sum(e.get('amount', 0) for e in fixed_expenses)
+        total_optimized = sum(e.get('amount', 0) for e in optimized_expenses)
+        balance = salary - total_fixed - total_optimized
+        savings_rate = (balance / salary) if salary > 0 else 0
+
         # Prepare results
         results = {
             'user_name': user_name,
@@ -225,11 +322,50 @@ def analyze():
             'emi_recommendation': emi_recommendation,
             'advice': advice,
             'smart_model_summary': ai_advice,
-            'bank_statement': bank_statement
+            'bank_statement': bank_statement,
+            'balance': balance,
+            'savings_rate': savings_rate
         }
 
         # Save results to JSON
         filename = save_results_to_json(results, user_name)
+
+        # --- Log storage: save every analysis with timestamp ---
+        now = datetime.now()
+        timestamp_str = now.strftime("%Y_%m_%d_%H%M%S")
+        user_dir = os.path.join('data', user_name)
+        os.makedirs(user_dir, exist_ok=True)
+        log_path = os.path.join(user_dir, f"{user_name}_{timestamp_str}.json")
+        # Compose log dict
+        monthly_log = {
+            'income': salary,
+            'fixed_expenses': [e for e in expenses if e.get('expense_type') == 'Fixed'],
+            'reducible_expenses': [e for e in expenses if e.get('expense_type') == 'Reducible'],
+            'optimized_expenses': results.get('optimized_expenses'),
+            'emi_plans': emi_plans,
+            'selected_emis': results.get('selected_emis'),
+            'balance': balance,
+            'savings_rate': savings_rate,
+            'alerts': results.get('alerts'),
+            'tips': results.get('tips'),
+            'investment_suggestions': results.get('investment_suggestions'),
+            'summary': results.get('bank_statement_summary') or bank_statement,
+            'analysis': results.get('smart_model_summary', {}).get('detailed_analysis', [])
+        }
+        # Ensure all expected fields are present in monthly_log
+        for key in [
+            'income', 'fixed_expenses', 'reducible_expenses', 'optimized_expenses',
+            'emi_plans', 'selected_emis', 'balance', 'savings_rate', 'alerts',
+            'tips', 'investment_suggestions', 'summary', 'analysis']:
+            if key not in monthly_log or monthly_log[key] is None:
+                if key in ['fixed_expenses', 'reducible_expenses', 'optimized_expenses', 'emi_plans', 'selected_emis', 'alerts', 'tips', 'investment_suggestions', 'analysis']:
+                    monthly_log[key] = []
+                elif key in ['income', 'balance', 'savings_rate']:
+                    monthly_log[key] = 0
+                else:
+                    monthly_log[key] = ""
+        with open(log_path, 'w', encoding='utf-8') as f:
+            json.dump(monthly_log, f, indent=2, ensure_ascii=False)
 
         return jsonify({
             'success': True,
@@ -242,6 +378,112 @@ def analyze():
             'success': False,
             'error': str(e)
         }), 400
+
+@app.route('/api/past_reports')
+@login_required
+def api_past_reports():
+    username = session['username']
+    user_dir = os.path.join('data', username)
+    logs = []
+    if os.path.exists(user_dir):
+        files = sorted([f for f in os.listdir(user_dir) if f.endswith('.json')], reverse=True)
+        for f in files[:6]:
+            with open(os.path.join(user_dir, f), 'r', encoding='utf-8') as fp:
+                log = json.load(fp)
+                # Compose summary for table/charts
+                # Extract timestamp from filename for display
+                ts = f.replace(f'{username}_','').replace('.json','')
+                total_expenses = sum(e['amount'] for e in log.get('fixed_expenses',[])) + sum(e['amount'] for e in log.get('reducible_expenses',[]))
+                category_expenses = {}
+                for e in log.get('fixed_expenses',[]) + log.get('reducible_expenses',[]):
+                    cat = e.get('category','Other')
+                    category_expenses[cat] = category_expenses.get(cat,0) + e.get('amount',0)
+                top_categories = sorted(category_expenses, key=category_expenses.get, reverse=True)[:2]
+                logs.append({
+                    'month': ts,
+                    'total_expenses': total_expenses,
+                    'balance': log.get('balance',0),
+                    'savings_rate': log.get('savings_rate',0),
+                    'top_categories': top_categories,
+                    'category_expenses': category_expenses,
+                    'analysis': log.get('analysis',[])
+                })
+        logs = list(reversed(logs))
+    # If no logs, return empty logs
+    return jsonify({'logs': logs})
+
+@app.route('/api/financial_score')
+@login_required
+def api_financial_score():
+    username = session['username']
+    user_dir = os.path.join('data', username)
+    logs = []
+    if os.path.exists(user_dir):
+        files = sorted([f for f in os.listdir(user_dir) if f.endswith('.json')], reverse=True)
+        for f in files[:6]:
+            with open(os.path.join(user_dir, f), 'r', encoding='utf-8') as fp:
+                logs.append(json.load(fp))
+        logs = list(reversed(logs))
+    score = 0
+    suggestions = []
+    emoji = '⚠️'
+    summary = 'Needs review.'
+    # +25: Balance improving
+    if len(logs) >= 2 and logs[-1]['balance'] > logs[-2]['balance']:
+        score += 25
+    else:
+        suggestions.append('Try to improve your balance month over month.')
+    # +25: Savings rate improving
+    if len(logs) >= 2 and logs[-1]['savings_rate'] > logs[-2]['savings_rate']:
+        score += 25
+    else:
+        suggestions.append('Try to improve your savings rate month over month.')
+    # +25: Reduction in low-priority spending
+    def low_priority_sum(log):
+        return sum(e['amount'] for e in log.get('reducible_expenses',[]) if e.get('priority','Medium')=='Low')
+    if len(logs) >= 2 and low_priority_sum(logs[-1]) < low_priority_sum(logs[-2]):
+        score += 25
+    else:
+        suggestions.append('Reduce low-priority spending for a better score.')
+    # +25: EMI <= 40% of income
+    if logs and sum(e.get('emi',0) for e in logs[-1].get('emi_plans',[])) <= 0.4 * logs[-1]['income']:
+        score += 25
+    else:
+        suggestions.append('Keep your total EMI below 40% of your income.')
+    # +25: No overspending in last 3 logs
+    overspending = any(l.get('balance',0)<0 for l in logs[-3:])
+    if not overspending:
+        score += 25
+    else:
+        suggestions.append('Avoid overspending to maintain a healthy balance.')
+    # Cap score at 100
+    score = min(score, 100)
+    # Emoji/summary
+    if score >= 100:
+        emoji = '📈'
+        summary = 'Excellent! Your finances are improving.'
+    elif score >= 75:
+        emoji = '🙂'
+        summary = 'Good! Keep up the progress.'
+    elif score >= 50:
+        emoji = '📉'
+        summary = 'Caution: Some areas need attention.'
+    else:
+        emoji = '⚠️'
+        summary = 'Risky: Take action to improve your finances.'
+    return jsonify({'score': score, 'emoji': emoji, 'summary': summary, 'suggestions': suggestions})
+
+@app.route('/api/download_report')
+@login_required
+def api_download_report():
+    username = session['username']
+    if not os.path.exists('results'):
+        return make_response('No report found (results folder missing).', 404)
+    user_files = sorted([f for f in os.listdir('results') if f.startswith(username)], reverse=True)
+    if user_files:
+        latest = user_files[0]
+        return send_file(os.path.join('results', latest), as_attachment=True, download_name=f"{username}_{datetime.now().strftime('%Y_%m')}_analysis.json")
+    return make_response('No report found.', 404)
 
 if __name__ == '__main__':
     app.run(debug=True) 

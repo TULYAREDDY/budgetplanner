@@ -655,6 +655,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Past Reports Button
+    const viewReportsBtn = document.getElementById('view-reports-btn');
+    if (viewReportsBtn) {
+        viewReportsBtn.addEventListener('click', async function() {
+            const resp = await fetch('/api/past_reports');
+            const data = await resp.json();
+            showPastReportsModal(data);
+        });
+    }
+    // Financial Score Button
+    const financialScoreBtn = document.getElementById('financial-score-btn');
+    if (financialScoreBtn) {
+        financialScoreBtn.addEventListener('click', async function() {
+            const resp = await fetch('/api/financial_score');
+            const data = await resp.json();
+            showFinancialScoreModal(data);
+        });
+    }
+    // Download Report Button
+    const downloadReportBtn = document.getElementById('download-report-btn');
+    if (downloadReportBtn) {
+        downloadReportBtn.addEventListener('click', function() {
+            window.location.href = '/api/download_report';
+        });
+    }
 });
 
 // Helper function to get icon based on analysis header
@@ -867,4 +893,122 @@ function formatSmartSummaryBody(text) {
     }
 
     return formattedHtml;
+}
+
+// --- Modal and Chart helpers ---
+function showPastReportsModal(data) {
+    // Create modal if not exists
+    let modal = document.getElementById('pastReportsModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'pastReportsModal';
+        modal.className = 'modal fade';
+        modal.tabIndex = -1;
+        modal.innerHTML = `
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Past Reports</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="pastReportsModalBody"></div>
+            </div>
+        </div>`;
+        document.body.appendChild(modal);
+    }
+    const modalBody = modal.querySelector('#pastReportsModalBody');
+    if (!data.logs || data.logs.length === 0) {
+        modalBody.innerHTML = '<div class="text-center text-muted py-5"><i class="fas fa-folder-open fa-2x mb-3"></i><br>No past reports found. Run an analysis to see your financial history here.</div>';
+    } else {
+        modalBody.innerHTML = `
+            <canvas id="savingsRateChart" height="120"></canvas>
+            <canvas id="categoryBarChart" height="120" class="mt-4"></canvas>
+            <div class="mt-4">
+                <table class="table table-bordered table-sm">
+                    <thead><tr><th>Month</th><th>Total Expenses</th><th>Balance</th><th>Savings %</th><th>Top 2 Categories</th></tr></thead>
+                    <tbody id="pastReportsTableBody"></tbody>
+                </table>
+            </div>
+        `;
+        // Fill table
+        const tbody = modal.querySelector('#pastReportsTableBody');
+        tbody.innerHTML = '';
+        data.logs.forEach(log => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${log.month}</td><td>${log.total_expenses}</td><td>${log.balance}</td><td>${log.savings_rate}%</td><td>${log.top_categories.join(', ')}</td>`;
+            tbody.appendChild(row);
+        });
+        // Draw charts
+        drawSavingsRateChart(data);
+        drawCategoryBarChart(data);
+    }
+    // Show modal
+    const bsModal = new bootstrap.Modal(modal);
+    bsModal.show();
+}
+function drawSavingsRateChart(data) {
+    const ctx = document.getElementById('savingsRateChart').getContext('2d');
+    if (window.savingsRateChartObj) window.savingsRateChartObj.destroy();
+    window.savingsRateChartObj = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: data.logs.map(l => l.month),
+            datasets: [{
+                label: 'Savings Rate (%)',
+                data: data.logs.map(l => l.savings_rate),
+                borderColor: '#198754',
+                backgroundColor: 'rgba(25,135,84,0.1)',
+                tension: 0.2
+            }]
+        },
+        options: {responsive: true}
+    });
+}
+function drawCategoryBarChart(data) {
+    const ctx = document.getElementById('categoryBarChart').getContext('2d');
+    if (window.categoryBarChartObj) window.categoryBarChartObj.destroy();
+    // Collect all categories
+    const allCats = Array.from(new Set(data.logs.flatMap(l => Object.keys(l.category_expenses))));
+    window.categoryBarChartObj = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: allCats,
+            datasets: data.logs.map((l, i) => ({
+                label: l.month,
+                data: allCats.map(cat => l.category_expenses[cat] || 0),
+                backgroundColor: `rgba(${100+i*30},${100+i*20},${200-i*30},0.5)`
+            }))
+        },
+        options: {responsive: true, scales: {x: {stacked: true}, y: {beginAtZero: true}}}
+    });
+}
+function showFinancialScoreModal(data) {
+    let modal = document.getElementById('financialScoreModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'financialScoreModal';
+        modal.className = 'modal fade';
+        modal.tabIndex = -1;
+        modal.innerHTML = `
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Your Financial Score</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="display-4">${data.emoji} <span>${data.score}/100</span></div>
+                    <div class="mt-2">${data.summary}</div>
+                    <ul class="list-group list-group-flush mt-3">${data.suggestions.map(s => `<li class="list-group-item">${s}</li>`).join('')}</ul>
+                </div>
+            </div>
+        </div>`;
+        document.body.appendChild(modal);
+    } else {
+        modal.querySelector('.display-4').innerHTML = `${data.emoji} <span>${data.score}/100</span>`;
+        modal.querySelector('.mt-2').textContent = data.summary;
+        modal.querySelector('ul').innerHTML = data.suggestions.map(s => `<li class="list-group-item">${s}</li>`).join('');
+    }
+    const bsModal = new bootstrap.Modal(modal);
+    bsModal.show();
 }

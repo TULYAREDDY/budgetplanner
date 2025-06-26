@@ -23,6 +23,12 @@
                     <li class="nav-item"><a class="nav-link text-white" href="#results">Results</a></li>
                 </ul>
             </nav>
+            <div class="d-flex align-items-center">
+                {% if username %}
+                    <span class="me-3">Welcome <strong>{{ username }}</strong></span>
+                    <a href="/logout" class="btn btn-outline-light btn-sm">Logout</a>
+                {% endif %}
+            </div>
         </div>
     </header>
 
@@ -33,6 +39,13 @@
             <p class="lead">Get personalized financial insights and intelligent recommendations.</p>
             <a href="#analysis" class="btn btn-light btn-lg mt-3">Start Your Analysis</a>
         </div>
+    </section>
+
+    <!-- Dashboard Action Buttons -->
+    <section class="container my-4 text-center">
+        <button id="view-reports-btn" type="button" class="btn btn-primary mx-2">🗂️ View Past Reports</button>
+        <button id="financial-score-btn" type="button" class="btn btn-success mx-2">📈 Get My Financial Score</button>
+        <button id="download-report-btn" type="button" class="btn btn-secondary mx-2">⬇️ Download My Report</button>
     </section>
 
     <!-- Analysis Form Section -->
@@ -96,6 +109,8 @@
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='script.js', v=current_time_version) }}"></script>
 </body>
