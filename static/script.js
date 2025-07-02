@@ -221,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const formData = {
                     user_name: document.getElementById('userName').value,
                     salary: parseFloat(document.getElementById('monthlySalary').value || 0),
+                    target_savings: parseFloat(document.getElementById('targetSavings').value || 0),
                     expenses: expenses,
                     emi_plans: emi_plans,
                     bank_statement: bsData // Use the processed bank statement data
@@ -270,51 +271,38 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <h4>Optimized Expenses</h4>
                             </div>
                             <div class="expense-list">`;
-            if (response.results.optimized_expenses && response.results.optimized_expenses.length > 0) {
-                // Show only reducible expenses that were modified
-                const originalReducibleExpenses = response.results.expenses ? response.results.expenses.filter(exp => exp.expense_type === 'Reducible') : [];
-                const optimizedReducibleExpenses = response.results.optimized_expenses.filter(exp => exp.expense_type === 'Reducible');
-
-                // Map original expenses by name and category for comparison
-                const originalMap = {};
-                originalReducibleExpenses.forEach(exp => {
-                    originalMap[exp.name + '|' + exp.category] = exp.amount;
-                });
-
-                // List only those reducible expenses where amount changed or all reducible expenses if none changed
-                let changedExpenses = optimizedReducibleExpenses.filter(exp => {
-                    const key = exp.name + '|' + exp.category;
-                    return originalMap[key] !== undefined && originalMap[key] !== exp.amount;
-                });
-
-                if (changedExpenses.length === 0) {
-                    // If no changes, show all reducible expenses
-                    changedExpenses = optimizedReducibleExpenses;
-                }
-
-                if (changedExpenses.length > 0) {
-                    changedExpenses.forEach(exp => {
-                        allResultsHtml += `
-                            <div class="expense-item">
-                                <div class="expense-info">
-                                    <i class="fas fa-tag"></i>
-                                    <span class="expense-name">${exp.name}</span>
-                                    <span class="expense-category">${exp.category}</span>
-                                </div>
-                                <div class="expense-amount">₹${exp.amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div>
-                            </div>`;
-                    });
-                } else {
-                    allResultsHtml += '<p class="text-muted">No optimized reducible expenses available.</p>';
-                }
+            // Show status message
+            const statusMsg = response.results.status_message || '';
+            const goalMet = response.results.goal_met;
+            const amountSaved = response.results.amount_saved || 0;
+            const gapRemaining = response.results.gap_remaining || 0;
+            const targetSavings = response.results.target_savings || 0;
+            if (goalMet) {
+                allResultsHtml += `<div class='alert alert-success mb-3'><i class='fas fa-check-circle me-2'></i>${statusMsg}</div>`;
+            } else if (amountSaved > 0) {
+                allResultsHtml += `<div class='alert alert-warning mb-3'><i class='fas fa-exclamation-triangle me-2'></i>${statusMsg}</div>`;
             } else {
-                allResultsHtml += '<p class="text-muted">No optimized expenses available.</p>';
+                allResultsHtml += `<div class='alert alert-danger mb-3'><i class='fas fa-times-circle me-2'></i>${statusMsg}</div>`;
             }
-            allResultsHtml += `
-                            </div>
-                        </div>
-                    </div>
-            `;
+            // Show summary
+            allResultsHtml += `<div class='mb-2'><strong>Target Savings:</strong> ₹${targetSavings.toLocaleString()}<br><strong>Amount Saved:</strong> ₹${amountSaved.toLocaleString()}<br><strong>Gap Remaining:</strong> ₹${gapRemaining.toLocaleString()}</div>`;
+            // Show table if any reducible expenses were optimized
+            const origReducible = response.results.expenses ? response.results.expenses.filter(exp => exp.expense_type === 'Reducible') : [];
+            const optReducible = response.results.optimized_expenses.filter(exp => exp.expense_type === 'Reducible');
+            if (optReducible.length > 0) {
+                allResultsHtml += `<div class='table-responsive'><table class='table table-bordered table-sm'><thead><tr><th>Category</th><th>Name</th><th>Original</th><th>Reduced</th><th>Reduction (%)</th><th>Priority</th></tr></thead><tbody>`;
+                optReducible.forEach(optExp => {
+                    const origExp = origReducible.find(e => e.name === optExp.name && e.category === optExp.category);
+                    const origAmt = origExp ? origExp.amount : optExp.amount;
+                    const reducedAmt = optExp.amount;
+                    const reductionPct = origAmt > 0 ? Math.round(100 * (origAmt - reducedAmt) / origAmt) : 0;
+                    allResultsHtml += `<tr><td>${optExp.category}</td><td>${optExp.name}</td><td>₹${origAmt.toLocaleString()}</td><td>₹${reducedAmt.toLocaleString()}</td><td>${reductionPct}%</td><td>${optExp.priority || ''}</td></tr>`;
+                });
+                allResultsHtml += `</tbody></table></div>`;
+            } else {
+                allResultsHtml += `<div class='text-muted'>No reducible expenses could be optimized.</div>`;
+            }
+            allResultsHtml += `</div></div></div>`;
 
                         // 3. EMI Recommendation
                         if (response.results.emi_recommendation && response.results.emi_recommendation.selected_plans && response.results.emi_recommendation.selected_plans.length > 0) {

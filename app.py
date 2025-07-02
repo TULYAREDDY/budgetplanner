@@ -291,25 +291,34 @@ def analyze():
         expenses = data.get('expenses', [])
         emi_plans = data.get('emi_plans', [])
         bank_statement = data.get('bank_statement')
+        target_savings = float(data.get('target_savings', 0))
+        if target_savings < 0:
+            return jsonify({'success': False, 'error': 'Target savings must be a positive number.'}), 400
         
         # Separate fixed and reducible expenses
         fixed_expenses = [exp for exp in expenses if exp.get('expense_type') == 'Fixed']
         reducible_expenses = [exp for exp in expenses if exp.get('expense_type') == 'Reducible']
 
-        # Run optimization only on reducible expenses
-        optimized_reducible_expenses, status = greedy_optimizer(reducible_expenses, salary)
+        # Calculate totals for fixed and EMI before optimization
+        total_fixed = sum(e.get('amount', 0) for e in fixed_expenses)
+        emi_total = 0
+        emi_recommendation = dp_emi_selector(emi_plans, salary)
+        if emi_recommendation and 'selected_plans' in emi_recommendation:
+            emi_total = sum(plan.get('monthlyPayment', 0) for plan in emi_recommendation['selected_plans'])
+
+        # Run optimization only on reducible expenses (now with net savings logic)
+        optimized_reducible_expenses, optimizer_status = greedy_optimizer(
+            reducible_expenses, salary, total_fixed, emi_total, target_savings
+        )
 
         # Merge fixed expenses back with optimized reducible expenses
         optimized_expenses = fixed_expenses + optimized_reducible_expenses
 
-        emi_recommendation = dp_emi_selector(emi_plans, salary)
         advice = decision_tree_advice(optimized_expenses, emi_recommendation, salary)
-
         # Get AI advice
         ai_advice = get_ai_advice(optimized_expenses, salary, emi_plans, bank_statement)
 
         # Calculate balance and savings
-        total_fixed = sum(e.get('amount', 0) for e in fixed_expenses)
         total_optimized = sum(e.get('amount', 0) for e in optimized_expenses)
         balance = salary - total_fixed - total_optimized
         savings_rate = (balance / salary) if salary > 0 else 0
@@ -318,13 +327,20 @@ def analyze():
         results = {
             'user_name': user_name,
             'salary': salary,
+            'target_savings': target_savings,
+            'expenses': expenses,
             'optimized_expenses': optimized_expenses,
             'emi_recommendation': emi_recommendation,
             'advice': advice,
             'smart_model_summary': ai_advice,
             'bank_statement': bank_statement,
             'balance': balance,
-            'savings_rate': savings_rate
+            'savings_rate': savings_rate,
+            'amount_saved': optimizer_status.get('actual_savings', 0),
+            'total_possible_savings': optimizer_status.get('total_possible_savings', 0),
+            'gap_remaining': optimizer_status.get('gap_remaining', 0),
+            'goal_met': optimizer_status.get('savings_goal_reached', False),
+            'status_message': optimizer_status.get('status_message', '')
         }
 
         # Save results to JSON
